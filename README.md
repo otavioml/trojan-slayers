@@ -1,2 +1,2 @@
 # trojan-slayers
-Projeto desenvolvido pelos membros treinees da guilda Trojan-Slayers
+Projeto desenvolvido pelos membros trainees da guilda Trojan Slayers
