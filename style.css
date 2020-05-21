@@ -1,6 +1,5 @@
 #modal{
 
-    background-color: burlywood;
     top: 0;
     bottom: 0;
     right: 0;
@@ -8,6 +7,7 @@
     display: flex;
     justify-content: center;
 }
+
 
 #modal .content{
 
@@ -17,6 +17,7 @@
 #modal .content h1{
     text-align: center;
     text-transform: uppercase;
+    color: darkblue;
 }
 
 #modal form{
@@ -47,7 +48,7 @@ form textarea{
     box-sizing: border-box;
 
     border-radius: 6px;
-    border: 1px solid rgba(141, 25, 52, 0.5);
+    border: 1px solid blue;
 
     outline: none;
 
@@ -59,7 +60,10 @@ form label {
     font-weight: 600;
     line-height: 32px;
     letter-spacing: 0.8px;
+    color: darkblue;
 }
+
+
 
 .menu-superior ul{
     text-align: center;
@@ -134,3 +138,20 @@ form label {
 }
 
 
+
+
+.table-sedes{
+    display: flex;
+    justify-content: center;
+    border-collapse: separate;
+}
+
+.table-sedes th{
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 50px;
+}
+
+.table-sedes td{
+    padding: 0 10px;
+}
