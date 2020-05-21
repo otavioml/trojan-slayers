@@ -76,6 +76,9 @@ form label {
     color: darkblue;
 }
 
+#modal .content p{
+    text-align: center;
+}
 
 
 .menu-superior ul{
@@ -220,4 +223,22 @@ form label {
 
 .about p {
     font-size: 1.2rem;
+}
+
+
+.table-sedes{
+    display: flex;
+    justify-content: center;
+    border-collapse: separate;
+}
+
+.table-sedes th{
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 50px;
+}
+
+.table-sedes td{
+    padding: 15px 10px;
+
 }
