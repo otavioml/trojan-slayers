@@ -28,40 +28,45 @@
         </nav>
     </header>
     <main>
-        <div>
+        <div class="container">
+            <br>
             <!--Duas div, a primeira contendo a imagem do livro, a segunda informações-->
-            <div>
-                <img src="imagem pagina sobre.webp" alt="">
+            <div class="row">
+                <div class="col-sm-6 capa-livro">
+                    <img src="imagem pagina sobre.webp" alt="" height="400px" class="rounded img-in-div">
+                </div>
+                <div class="livro-info col-sm-6">
+                    <table>
+                        <tr>
+                            <td><h4>TÍTULO</h4></td>
+                            <td><p>O mundo de Sofia</p></td>
+                        </tr>
+                        <tr>
+                            <td><h4>AUTOR</h4></td>
+                            <td><p>Jostein Gaarder</p></td>
+                        </tr>
+                        <tr>
+                            <td><h4>GÊNERO</h4></td>
+                            <td><p>Romance, Romance filosófico</p></td>
+                        </tr>
+                        <tr>
+                            <td><h4>PUBLICAÇÃO</h4></td>
+                            <td><p>1991</p></td>
+                        </tr>
+                        <tr>
+                            <td><h4>DISPONIBILIDADE</h4></td>
+                            <td><p>2 Exemplares</p></td>
+                        </tr>
+                    </table>
+                    <!--Botões excluir e editar-->
+                    <div>
+                        <a href="#"><button type="button" class="btn btn-primary">Excluir</button></a>
+                        <a href="#"><button type="button" class="btn btn-primary">Editar</button></a>
+                    </div>
+                </div>
             </div>
-            <div>
-                <table>
-                    <tr>
-                        <td><h4>TITULO</h4></td>
-                        <td><p>O mundo de Sofia</p></td>
-                    </tr>
-                    <tr>
-                        <td><h4>AUTOR</h4></td>
-                        <td><p>Jostein Gaarder</p></td>
-                    </tr>
-                    <tr>
-                        <td><h4>GÊNERO</h4></td>
-                        <td><p>Romance, Romance filosófico</p></td>>
-                    </tr>
-                    <tr>
-                        <td><h4>DATA DE PUBLICAÇÃO</h4></td>
-                        <td><p>1991</p></td>>
-                    </tr>
-                    <tr>
-                        <td><h4>DISPONIBILIDADE</h4></td>
-                        <td><p>2 Exemplares</p></td>>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <!--Botões excluir e editar-->
-        <div>
-            <a href="#"><button>Excluir</button></a>
-            <a href="#"><button>Editar</button></a>
+            <br>
+            <br>
         </div>
     </main>
 </body>

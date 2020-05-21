@@ -72,3 +72,65 @@ form label {
     text-align: center;
 }
 
+.editar-excluir-sede, .adicionar-novidade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.editar-excluir-sede button {
+    height: 50%;
+    margin: auto;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.img-in-div {
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.article-img {
+    text-align: center;
+    margin-top: 15px
+}
+
+.capa-livro {
+    text-align: center;
+}
+
+.button-link, button a {
+    color: white;
+}
+
+.button-link:hover, button a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.nome-data-novidade, .editar-excluir-livro {
+    display: block;
+    align-items: right;
+    text-align: right;
+}
+
+.livros td {
+    text-align: center;
+}
+
+.editar-excluir-livro {
+    margin-right: 15px;
+}
+
+.adicionar-livro {
+    display: inline;
+    float: right;
+    margin-right: 1.4%;
+}
+
+.livro-info td p{
+    display: block;
+    text-align: right;
+}
+
+

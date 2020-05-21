@@ -17,7 +17,7 @@
 
         <nav class="menu-superior">
             <ul>
-                <li><a href="index.html">Homepage</a></li>
+                <li><a href="homepage.html">Homepage</a></li>
                 <li><a href="livros.html">Livros</a></li>
                 <li><a href="sedes.html">Sedes</a></li>
                 <li><a href="contato.html">Contato</a></li>
@@ -29,10 +29,10 @@
     </header>
     <main>
         <!--Div a seguir contem uma div com os livros recentes e outra com as sedes recentes-->
-        <div>
-            <div>
-                <h1>LIVROS RECENTES</h1>
-                <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>LIVROS RECENTES</h1>
                     <table>
                         <thead>
                             <tr>
@@ -54,8 +54,26 @@
                                 <td><button><a href="#">Excluir</a></button></td>
                             </tr>
                         </tbody>
-                    </table>
-                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Gênero</th>  
+                                <th>Data de publicação</th>
+                                <th>Autor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#">Exemplo</a></td>
+                                <td><a href="#">Exemplo</a></td>  
+                                <td><a href="#">xx/xx/xxxx</a></td>
+                                <td><a href="#">Exemplo</a></td>
+                            </tr>
+                            <tr>
+                                <td><button><a href="#">Editar</a></button></a> </td>
+                                <td><button><a href="#">Excluir</a></button></td>
+                            </tr>
+                        </tbody>
                         <thead>
                             <tr>
                                 <th>Nome</th>
@@ -77,36 +95,15 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Gênero</th>  
-                                <th>Data de publicação</th>
-                                <th>Autor</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><a href="#">Exemplo</a></td>
-                                <td><a href="#">Exemplo</a></td>  
-                                <td><a href="#">xx/xx/xxxx</a></td>
-                                <td><a href="#">Exemplo</a></td>
-                            </tr>
-                            <tr>
-                                <td><button><a href="#">Editar</a></button></a> </td>
-                                <td><button><a href="#">Excluir</a></button></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                </div>
+                <div class="col-sm-6">
+                    <div>
+                        <h1>SEDES RECENTES</h1>
+                        <!--Aguardando implementação da pagina Sedes-->
+                    </div>
                 </div>
             </div>                
-            <div>
-                <div>
-                    <h1>SEDES RECENTES</h1>
-                    <!--Aguardando implementação da pagina Sedes-->
-                </div>
-            </div>
+            
         </div>
 
     </main>

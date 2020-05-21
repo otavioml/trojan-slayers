@@ -12,89 +12,259 @@
     <body>
         <header>
             <div class="cabeçalho">
-                <img src="logo.png" alt="logomarca" height= "180px" width= "180px">
-                <input type="text" placeholder="Search...">
+                <img src="Logo-Mundo-De-Sofia-Sem-Fundo.png" alt="logomarca" height= "180px" width= "180px">
+                <input type="text" placeholder="Search..">
             </div>
+
             <nav class="menu-superior">
                 <ul>
-                    <li><a href="#">Homepage</a></li>
-                    <li><a href="#">Livros</a></li>
-                    <li><a href="#">Sedes</a></li>
-                    <li><a href="#">Contato</a></li>
-                    <li><a href="#">Sobre</a></li>
+                    <li><a href="homepage.html">Homepage</a></li>
+                    <li><a href="livros.html">Livros</a></li>
+                    <li><a href="sedes.html">Sedes</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="novidades.html">Novidades</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
                 </ul>
+
             </nav>
         </header>
         <main>
-            <button><a>Adicionar</a></button>
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Gênero</th> 
-                            <th>Data de publicação</th>
-                            <th>Autor</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="#">Exemplo</a></td>
-                            <td><a href="#">Exemplo</a></td>  
-                            <td><a href="#">xx/xx/xxxx</a></td>
-                            <td><a href="#">Exemplo</a></td>
-                        </tr>
-                        <tr>
-                            <td><button><a href="#">Editar</a></button></a> </td>
-                            <td><button><a href="#">Excluir</a></button></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Gênero</th>  
-                            <th>Data de publicação</th>
-                            <th>Autor</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="#">Exemplo</a></td>
-                            <td><a href="#">Exemplo</a></td>  
-                            <td><a href="#">xx/xx/xxxx</a></td>
-                            <td><a href="#">Exemplo</a></td>
-                        </tr>
-                        <tr>
-                            <td><button><a href="#">Editar</a></button></a> </td>
-                            <td><button><a href="#">Excluir</a></button></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Gênero</th>  
-                            <th>Data de publicação</th>
-                            <th>Autor</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="#">Exemplo</a></td>
-                            <td><a href="#">Exemplo</a></td>  
-                            <td><a href="#">xx/xx/xxxx</a></td>
-                            <td><a href="#">Exemplo</a></td>
-                        </tr>
-                        <tr>
-                            <td><button><a href="#">Editar</a></button></a> </td>
-                            <td><button><a href="#">Excluir</a></button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <div class="container">
+                <br>
+                <h2 style="display: inline;">Livros</h2>
+                <div class="adicionar-livro">
+                    <button type="button" class="btn btn-primary"><a href="#" class="button-link">Adicionar</a></button>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="row livros">
+                    <div class="col-sm-4">
+                        <div class="livro-lista">
+                            <table> <!-- LIVRO -->
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Gênero</th> 
+                                        <th>Data de publicação</th>
+                                        <th>Autor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#">Exemplo</a></td>
+                                        <td><a href="#">Exemplo</a></td>  
+                                        <td><a href="#">xx/xx/xxxx</a></td>
+                                        <td><a href="#">Exemplo</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="editar-excluir-livro">
+                                <button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a>
+                                <button type="button" class="btn btn-primary"><a href="#">Excluir</a></button>
+                            </div> 
+                        </div>
+                        <div class="livro-lista">
+                            <table> <!-- LIVRO -->
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Gênero</th> 
+                                        <th>Data de publicação</th>
+                                        <th>Autor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#">Exemplo</a></td>
+                                        <td><a href="#">Exemplo</a></td>  
+                                        <td><a href="#">xx/xx/xxxx</a></td>
+                                        <td><a href="#">Exemplo</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="editar-excluir-livro">
+                                <button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a>
+                                <button type="button" class="btn btn-primary"><a href="#">Excluir</a></button>
+                            </div> 
+                        </div>
+                        <div class="livro-lista">
+                            <table> <!-- LIVRO -->
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Gênero</th> 
+                                        <th>Data de publicação</th>
+                                        <th>Autor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#">Exemplo</a></td>
+                                        <td><a href="#">Exemplo</a></td>  
+                                        <td><a href="#">xx/xx/xxxx</a></td>
+                                        <td><a href="#">Exemplo</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="editar-excluir-livro">
+                                <button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a>
+                                <button type="button" class="btn btn-primary"><a href="#">Excluir</a></button>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="livro-lista">
+                            <table> <!-- LIVRO -->
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Gênero</th> 
+                                        <th>Data de publicação</th>
+                                        <th>Autor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#">Exemplo</a></td>
+                                        <td><a href="#">Exemplo</a></td>  
+                                        <td><a href="#">xx/xx/xxxx</a></td>
+                                        <td><a href="#">Exemplo</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="editar-excluir-livro">
+                                <button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a>
+                                <button type="button" class="btn btn-primary"><a href="#">Excluir</a></button>
+                            </div> 
+                        </div>
+                        <div class="livro-lista">
+                            <table> <!-- LIVRO -->
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Gênero</th> 
+                                        <th>Data de publicação</th>
+                                        <th>Autor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#">Exemplo</a></td>
+                                        <td><a href="#">Exemplo</a></td>  
+                                        <td><a href="#">xx/xx/xxxx</a></td>
+                                        <td><a href="#">Exemplo</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="editar-excluir-livro">
+                                <button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a>
+                                <button type="button" class="btn btn-primary"><a href="#">Excluir</a></button>
+                            </div> 
+                        </div>
+                        <div class="livro-lista">
+                            <table> <!-- LIVRO -->
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Gênero</th> 
+                                        <th>Data de publicação</th>
+                                        <th>Autor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#">Exemplo</a></td>
+                                        <td><a href="#">Exemplo</a></td>  
+                                        <td><a href="#">xx/xx/xxxx</a></td>
+                                        <td><a href="#">Exemplo</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="editar-excluir-livro">
+                                <button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a>
+                                <button type="button" class="btn btn-primary"><a href="#">Excluir</a></button>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="livro-lista">
+                            <table> <!-- LIVRO -->
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Gênero</th> 
+                                        <th>Data de publicação</th>
+                                        <th>Autor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#">Exemplo</a></td>
+                                        <td><a href="#">Exemplo</a></td>  
+                                        <td><a href="#">xx/xx/xxxx</a></td>
+                                        <td><a href="#">Exemplo</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="editar-excluir-livro">
+                                <button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a>
+                                <button type="button" class="btn btn-primary"><a href="#">Excluir</a></button>
+                            </div> 
+                        </div>
+                        <div class="livro-lista">
+                            <table> <!-- LIVRO -->
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Gênero</th> 
+                                        <th>Data de publicação</th>
+                                        <th>Autor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#">Exemplo</a></td>
+                                        <td><a href="#">Exemplo</a></td>  
+                                        <td><a href="#">xx/xx/xxxx</a></td>
+                                        <td><a href="#">Exemplo</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="editar-excluir-livro">
+                                <button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a>
+                                <button type="button" class="btn btn-primary"><a href="#">Excluir</a></button>
+                            </div> 
+                        </div>
+                        <div class="livro-lista">
+                            <table> <!-- LIVRO -->
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Gênero</th> 
+                                        <th>Data de publicação</th>
+                                        <th>Autor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#">Exemplo</a></td>
+                                        <td><a href="#">Exemplo</a></td>  
+                                        <td><a href="#">xx/xx/xxxx</a></td>
+                                        <td><a href="#">Exemplo</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="editar-excluir-livro">
+                                <button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a>
+                                <button type="button" class="btn btn-primary"><a href="#">Excluir</a></button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                </div>
+            
+            
             <div>
 
             </div>
