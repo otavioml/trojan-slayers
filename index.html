@@ -10,22 +10,27 @@
 </head>
 <body>
     <header>
-        <div class="cabeçalho">
-            <img src="Logo-Mundo-De-Sofia-Sem-Fundo.png" alt="logomarca" height= "180px" width= "180px">
-            <input type="text" placeholder="Search..">
+        <div class="fixed-menu">
+            <nav>
+            <a href="index.html"><li class="nav-item">Home</li></a>
+            <a href="livros.html"><li class="nav-item">Livros</li></a>
+            <a href="sedes.html"><li class="nav-item">Sedes</li></a>
+            <a href="novidades.html"><li class="nav-item">Novidades</li></a>
+            <a href="contato.html"><li class="nav-item">Contato</li></a>
+            <a href="sobre.html"><li class="nav-item">Sobre</li></a>
+            </nav>
         </div>
 
-        <nav class="menu-superior">
-            <ul>
-                <li><a href="index.html">Homepage</a></li>
-                <li><a href="livros.html">Livros</a></li>
-                <li><a href="sedes.html">Sedes</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <li><a href="novidades.html">Novidades</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-            </ul>
+        <div class="logo-top">
+            <a href="index.html">
+                <img src="Logo-Mundo-De-Sofia-Sem-Fundo.png" alt="logomarca" height= "100px" width= "auto" id="logo">
+            </a>
+        </div>
+        <div class="search-top">
+            <input type="text" placeholder="Pesquisar">
+        </div>
+        <div class="filler"></div>
 
-        </nav>
     </header>
     <main>
         <!--Div a seguir contem uma div com os livros recentes e outra com as sedes recentes-->
@@ -50,8 +55,8 @@
                                 <td><a href="#">Exemplo</a></td>
                             </tr>
                             <tr>
-                                <td><button><a href="#">Editar</a></button></a> </td>
-                                <td><button><a href="#">Excluir</a></button></td>
+                                <td><button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a> </td>
+                                <td><button type="button" class="btn btn-primary"><a href="#">Excluir</a></button></td>
                             </tr>
                         </tbody>
                         <thead>
@@ -70,8 +75,8 @@
                                 <td><a href="#">Exemplo</a></td>
                             </tr>
                             <tr>
-                                <td><button><a href="#">Editar</a></button></a> </td>
-                                <td><button><a href="#">Excluir</a></button></td>
+                                <td><button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a> </td>
+                                <td><button type="button" class="btn btn-primary"><a href="#">Excluir</a></button></td>
                             </tr>
                         </tbody>
                         <thead>
@@ -90,8 +95,8 @@
                                 <td><a href="#">Exemplo</a></td>
                             </tr>
                             <tr>
-                                <td><button><a href="#">Editar</a></button></a> </td>
-                                <td><button><a href="#">Excluir</a></button></td>
+                                <td><button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a> </td>
+                                <td><button type="button" class="btn btn-primary"><a href="#">Excluir</a></button></td>
                             </tr>
                         </tbody>
                     </table>
