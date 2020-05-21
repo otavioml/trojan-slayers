@@ -1,6 +1,17 @@
-#modal{
+/* 
+ORANGE: #f7b267
+MID1: #f79d65
+MID2: #f4845f
+MID3: #f27059
+RED: #f25c54
+*/
 
-    background-color: burlywood;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+*{
+    font-family: 'Josefin Sans', sans-serif;
+}
+#modal{
     top: 0;
     bottom: 0;
     right: 0;
@@ -10,13 +21,11 @@
 }
 
 #modal .content{
-
-    color: white;
+    color: black;
 }
 
 #modal .content h1{
     text-align: center;
-    text-transform: uppercase;
 }
 
 #modal form{
@@ -99,11 +108,11 @@ form label {
     text-align: center;
 }
 
-.button-link, button a {
+.button-link, button a, .navbar a {
     color: white;
 }
 
-.button-link:hover, button a:hover {
+.button-link:hover, button a:hover, .navbar a:hover {
     text-decoration: none;
     color: white;
 }
@@ -133,4 +142,74 @@ form label {
     text-align: right;
 }
 
+.fixed-menu {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    background-color: #f79d65;
+    width: 100%;
+    height: 100px;
+}
 
+.fixed-menu nav {
+    margin: auto;
+}
+
+.fixed-menu li {
+    list-style: none;
+    padding: 0 30px;
+    display: inline-block;
+    height: 100px;
+    line-height: 100px;
+    box-sizing: border-box;
+    font-size: 1.25rem;
+}
+
+
+.fixed-menu li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color ease 0.4s;
+}
+
+.fixed-menu a {
+    color: white;
+}
+
+.fixed-menu a:hover {
+    text-decoration: none;
+}
+
+.logo-top {
+    float: left;
+    position: fixed;
+    background-color: #f7b267;
+    padding-left: 1%;
+    padding-right: 0.8%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.search-top {
+    float: right;
+    position: fixed;
+    right: 2%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.search-top input {
+    border: none;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.filler {
+    height: 100px;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.about p {
+    font-size: 1.2rem;
+}
