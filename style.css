@@ -61,7 +61,7 @@ form textarea{
     box-sizing: border-box;
 
     border-radius: 6px;
-    border: 1px solid blue;
+    border: 1px solid #f79d65;
 
     outline: none;
 
@@ -73,7 +73,7 @@ form label {
     font-weight: 600;
     line-height: 32px;
     letter-spacing: 0.8px;
-    color: darkblue;
+    color: black;
 }
 
 #modal .content p{
@@ -241,4 +241,8 @@ form label {
 .table-sedes td{
     padding: 15px 10px;
 
+}
+
+.table-sedes a:hover {
+    text-decoration: none;
 }
