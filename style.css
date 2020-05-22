@@ -209,6 +209,7 @@ form label {
     height: 100px;
     display: flex;
     align-items: center;
+    z-index: 2;
 }
 
 .search-top input {
@@ -261,7 +262,7 @@ form label {
     max-width: 100%;
 }
 
-.card-text{
+.card-text {
     font-size: 1.2rem;
     text-align: center;
 }
@@ -275,7 +276,7 @@ form label {
 }
 
 .card {
-    padding: 15px;
+    padding: 0px 15px;
 }
 
 .smaller-padding {
