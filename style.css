@@ -256,3 +256,28 @@ form label {
 .spaced-button {
     padding-left: 15px;
 }
+.card img {
+    height: 300px;
+    max-width: 100%;
+}
+
+.card-text{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.cardboard-livros .row {
+    margin-top: 15px;
+}
+
+.cardboard-livros .row .firstrow {
+    margin-top: 15px;
+}
+
+.card {
+    padding: 15px;
+}
+
+.smaller-padding {
+    padding: 0px 10px;
+}
