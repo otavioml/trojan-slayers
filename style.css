@@ -265,6 +265,7 @@ form label {
 .card-text {
     font-size: 1.2rem;
     text-align: center;
+    margin-bottom: 8px;
 }
 
 .cardboard-livros .row {
@@ -282,3 +283,10 @@ form label {
 .smaller-padding {
     padding: 0px 10px;
 }
+
+.card-desc {
+    margin-bottom: 0px;
+    font-size: small;
+    text-align: center;
+}
+
