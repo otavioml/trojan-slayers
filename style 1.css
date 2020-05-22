@@ -1,0 +1,26 @@
+.menu-superior ul{
+    text-align: center;
+}
+
+.menu-superior ul li{
+    display: inline;
+    padding: 30px;
+    margin: 30px;
+    text-align: center;
+}
+
+.menu-superior ul li a{
+    font-size: large;
+    color: black;
+    text-decoration: none;
+}
+
+
+header{
+    background-color: brown;
+}
+
+#cabeçalho input{
+    position: absolute;
+    text-align: center;
+}
