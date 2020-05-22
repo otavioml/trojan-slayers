@@ -298,4 +298,32 @@ form input, form textarea {
     text-align: center;
 }
 
+.btn-primary {
+    background: #ffbb73;
+    border: none;
+}
+.btn-primary:hover {
+    background: #ff982b
+}
+
+table a {
+    text-decoration: none;
+    color: white;
+}
+
+table button a:hover {
+    color: white;
+}
+
+table a:hover {
+    text-decoration: none;
+    color: #ff982b;
+}
+
+#botao-enviar  {
+    padding: 2% 0 2% 0;
+    font-size: 20px;
+}
+
+
 
