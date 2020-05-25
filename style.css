@@ -331,5 +331,23 @@ header input{
     color: black;
 }
 
+ #myfile{
+    color: white !important;
+}
 
+.data-livros  {
+    color: #6c757d;
+}
 
+.data-livros input[type="date"]::-webkit-inner-spin-button,
+ input[type="date"]::-webkit-calendar-picker-indicator {
+     display: none;
+     -webkit-appearance: none;
+ }
+ .form-check-input {
+    margin-top: 1.05rem;
+ }
+
+.form-check {
+    margin-right: 70%;
+}
