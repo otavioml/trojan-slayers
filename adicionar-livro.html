@@ -63,44 +63,27 @@
                                 <input type="text" name="preco" placeholder="R$ 00,00." required>
                             </div>
                             <div class="textarea-branco">
-                                <div class="input-wrapper">
-                                    <label for="foto-livro">Foto do livro</label>
+                                <div class="input-wrapper upload-btn">
+                                    <label for="foto-livro" style="margin-bottom: 0px;">Adicionar capa do livro</label>
                                     <input type="file" id="myfile" name="foto-livro" required>
                                 </div>
                             </div>
-                            <div class="input-wrapper">
-                                <label for="pergunta-sede">Disponível em estoque?</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                      Sim
-                                    </label>
-                                  </div>
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-                                    <label class="form-check-label" for="defaultCheck2">
-                                      Não
-                                    </label>
-                                </div>
+                            <!-- DISPONÍVEL / REGISTRADO -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Disponível em estoque?</label>
                             </div>
-                            <div class="input-wrapper">
-                                <label for="pergunta-sede">Cadastrar em uma sede específica?</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                      Sim
-                                    </label>
-                                  </div>
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-                                    <label class="form-check-label" for="defaultCheck2">
-                                      Não
-                                    </label>
-                                </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck2" onclick="show();">
+                                <label class="custom-control-label" for="customCheck2">Registrar em sede?</label>
                             </div>
-                            <div class="input-wrapper">
-                                <label for="sede-cadastrada">Qual?</label>
-                                <input type="text" name="sede-cadastrada" placeholder="Ex: AV Daniel Dela Touche, Bequimão Shopping da Ilha, São Luis -MA" required>
+                            <!-- Lista de Sedes -->
+                            <div id="lista-sedes">
+                                <select class="custom-select">
+                                    <option selected value="0">Sede A</option>
+                                    <option value="1">Sede B</option>
+                                    <option value="2">Sede C</option>
+                                  </select>
                             </div>
                             <br>
                             <input class="btn-primary" type="submit" value="Adicionar novo livro"> 
@@ -109,6 +92,17 @@
                 </div>
             </main>
         </main>
+        <!-- FUNÇÃO PARA MOSTRAR O DROPDOWN DAS SEDES -->
+        <script type="text/javascript">
+            function show() {
+                if (document.getElementById("customCheck2").checked){
+                    document.getElementById("lista-sedes").style.display = "block";
+                } else {
+                    document.getElementById("lista-sedes").style.display = "none";
+                }
+            }
+        </script>
+        <!-- JQUERY & BOOTSTRAP -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

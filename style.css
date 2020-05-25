@@ -14,6 +14,12 @@ DARKRED: #772e25
     color: white;
 }
 
+* option {
+    color: #495057;
+    padding-bottom: 0px;
+    font-family: 'Monaco', monospace;
+}
+
 body {
     background-color: #c44536;
 }
@@ -305,8 +311,18 @@ form input, form textarea {
     border: none;
 }
 .btn-primary:hover {
-    background: #ff982b
+    background: #ff982b;
 }
+.btn-primary:focus {
+    background: #ed8518;
+    border: none !important;
+    box-shadow: none !important;
+}
+.btn-primary:active {
+    background: #ed8518 !important;
+    border: none !important;
+}
+
 
 table a {
     text-decoration: none;
@@ -333,6 +349,7 @@ header input{
 
  #myfile{
     color: white !important;
+    padding-left: 0;
 }
 
 .data-livros  {
@@ -350,4 +367,13 @@ header input{
 
 .form-check {
     margin-right: 70%;
+}
+
+input[type=checkbox] {
+    width: auto;
+}
+
+#lista-sedes {
+    display: none;
+    margin-top: 15px;
 }
