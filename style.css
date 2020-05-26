@@ -20,6 +20,13 @@ DARKRED: #772e25
     font-family: 'Monaco', monospace;
 }
 
+* a:hover {
+    transition: color 0.2s ease;
+}
+
+* a {
+    transition: color 0.1s ease;
+}
 body {
     background-color: #ee5e4d;
 }
@@ -29,7 +36,7 @@ body {
 }
 
 .card:hover {
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
     transition: box-shadow 0.5s ease;
 }
     
@@ -316,6 +323,7 @@ form input, form textarea {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     height: 97%;
     transition: box-shadow 0.5s ease;
+    transition: background-color 0.5s ease;
 }
 
 .smaller-padding {
