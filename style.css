@@ -411,3 +411,7 @@ input[type=checkbox] {
         max-width: 50% !important;
     }
 }
+
+.no-dec {
+    text-decoration: none !important;
+}
