@@ -20,6 +20,13 @@ DARKRED: #772e25
     font-family: 'Monaco', monospace;
 }
 
+* a:hover {
+    transition: color 0.2s ease;
+}
+
+* a {
+    transition: color 0.1s ease;
+}
 body {
     background-color: #c44536;
 }
