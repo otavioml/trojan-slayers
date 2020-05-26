@@ -21,7 +21,7 @@ DARKRED: #772e25
 }
 
 body {
-    background-color: #c44536;
+    background-color: #ee5e4d;
 }
 
 .card * {
@@ -181,7 +181,7 @@ form input, form textarea {
     display: flex;
     position: fixed;
     align-items: center;
-    background-color: #8A0100;
+    background-color: #5e2129;
     width: 100%;
     height: 100px;
     z-index: 1;
