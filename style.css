@@ -163,6 +163,10 @@ form input, form textarea {
     margin-right: 1.4%;
 }
 
+.livro-info .tabela-livro-esp td{
+    padding-bottom: 6%;
+}
+
 .livro-info td p{
     display: block;
     text-align: right;
@@ -272,6 +276,17 @@ form input, form textarea {
 .spaced-button {
     padding-left: 15px;
 }
+
+.card-titulo {
+    position: relative;
+    height: 60px;
+}
+
+.card-autor {
+    position: relative;
+    height: 38px;
+}
+
 .card img {
     height: 300px;
     max-width: 100%;
@@ -294,6 +309,7 @@ form input, form textarea {
 .card {
     padding: 0px 15px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    height: 97%;
 }
 
 .smaller-padding {
