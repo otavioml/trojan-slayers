@@ -27,6 +27,11 @@ body {
 .card * {
     color: black;
 }
+
+.card:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.5s ease;
+}
     
 /* FORMS */
 #modal{
@@ -310,6 +315,7 @@ form input, form textarea {
     padding: 0px 15px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     height: 97%;
+    transition: box-shadow 0.5s ease;
 }
 
 .smaller-padding {
@@ -415,3 +421,4 @@ input[type=checkbox] {
 .no-dec {
     text-decoration: none !important;
 }
+
