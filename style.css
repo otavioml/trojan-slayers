@@ -393,3 +393,21 @@ input[type=checkbox] {
     display: none;
     margin-top: 15px;
 }
+
+@media (min-width: 300px) {
+    .about-container {
+        max-width: 85% !important;
+    }
+}
+
+@media (min-width: 987px) {
+    .about-container {
+        max-width: 80% !important;
+    }
+}
+
+@media (min-width: 1360px) {
+    .about-container {
+        max-width: 50% !important;
+    }
+}
