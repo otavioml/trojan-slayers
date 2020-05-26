@@ -84,7 +84,7 @@ form textarea{
     box-sizing: border-box;
 
     border-radius: 6px;
-    border: 1px solid #c44536;
+    border: none;
 
     outline: none;
 
@@ -144,6 +144,11 @@ form input, form textarea {
 
 .capa-livro {
     text-align: center;
+   
+}
+
+.capa-livro img {
+    border: 2px solid white;
 }
 
 .button-link, button a, .navbar a {
