@@ -437,4 +437,6 @@ input[type=checkbox] {
 
 .hometitle{
     font-family: 'Montserrat', sans-serif;
+    padding: 10px 0 30px 0;
+    text-transform: uppercase;
 }
