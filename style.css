@@ -514,7 +514,17 @@ input[type=checkbox] {
         border: none;
     }
 
+    .cards-livros-mobile {
+        margin-bottom: 2%;
+    }
+    .container-livros-mobile {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
 
+    .row-mobile {
+        margin-top: 0 !important;
+    }
 }
 
 @media (max-width: 1280px) {
