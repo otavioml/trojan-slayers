@@ -469,12 +469,20 @@ input[type=checkbox] {
 }
 
 /* PC */
-@media (min-width: 1360px) {
+@media (min-width: 1280px) {
     .about-container {
         max-width: 50% !important;
     }
 
     .sedes-recentes-mobile {
+        display: none;
+    }
+
+    .pc-header {
+        display: block;
+    }
+
+    .mobile-header {
         display: none;
     }
 }
@@ -509,7 +517,7 @@ input[type=checkbox] {
 
 }
 
-@media (max-width: 1360px) {
+@media (max-width: 1280px) {
     .card img {
         height: 400px;
     }
