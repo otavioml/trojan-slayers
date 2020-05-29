@@ -194,7 +194,7 @@ form input, form textarea {
 .editar-excluir-sede, .adicionar-novidade {
     display: flex;
     align-items: center;
-    justify-content: center;
+
 }
 .editar-excluir-sede button {
     height: 50%;
@@ -522,6 +522,10 @@ input[type=checkbox] {
     .mobile-header {
         display: none;
     }
+
+    .editar-excluir-sede, .adicionar-novidade {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -550,6 +554,13 @@ input[type=checkbox] {
     .sede-final {
         border: none;
     }
+
+    .editar-excluir-sede, .adicionar-novidade {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+
 
 
 }
