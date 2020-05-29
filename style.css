@@ -526,6 +526,7 @@ input[type=checkbox] {
     .editar-excluir-sede, .adicionar-novidade {
         justify-content: center;
     }
+
 }
 
 @media (max-width: 768px) {
@@ -558,6 +559,10 @@ input[type=checkbox] {
     .editar-excluir-sede, .adicionar-novidade {
         margin-top: 10px;
         margin-bottom: 20px;
+    }
+
+    .livro-especifico-tabela-mobile {
+        display: none;
     }
 
 
