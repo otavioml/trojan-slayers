@@ -562,6 +562,10 @@ input[type=checkbox] {
     .row-mobile {
         margin-top: 0 !important;
     }
+
+    .capa-livro img {
+        margin-bottom: 44px;
+    }
 }
 
 @media (max-width: 1280px) {
