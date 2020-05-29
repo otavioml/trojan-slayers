@@ -431,6 +431,40 @@ input[type=checkbox] {
     .about-container {
         max-width: 50% !important;
     }
+
+    .sedes-recentes-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .homepage .row {
+        margin-right: 0;
+        margin-left: 0;;
+    }
+
+    .homepage .col-sm-3 {
+        margin-bottom: 6%;
+    }
+
+    .tabela-homepage {
+        display: none;
+    }
+
+    .hometitle-mobile {
+        padding: 10px 0 15px 0;
+    }
+
+    .sede-mobile {
+        padding: 20px 0 20px 0;
+        border-bottom: solid 2px white;
+    }
+
+    .sede-final {
+        border: none;
+    }
+
+
 }
 
 .no-dec {
