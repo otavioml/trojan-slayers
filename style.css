@@ -518,12 +518,17 @@ input[type=checkbox] {
 }
 
 @media (max-width: 1280px) {
-    .card img {
+    .cardboard-livros .card img {
         height: 400px;
     }
 
+    .card img {
+        height: 370px;
+    }
+
     .hometitle {
-        padding-left: 20px;
+        text-align: center;
+        font-size: 2rem;
     }
 }
 
