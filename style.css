@@ -54,6 +54,33 @@ body {
     height: 70px;
 }
 
+.mobile-header .fixed-menu {
+    display: flex;
+    justify-content: center;
+}
+
+.pesquisa-mobile {
+    padding-top: 2px;
+}
+
+.pesquisa-mobile input {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: white;
+    border-bottom: solid white 1px;
+}
+
+.pesquisa-mobile input:focus {
+    box-shadow: none !important;
+    outline: none;
+}
+
+.pesquisa-mobile ::placeholder{
+    font-weight: 1;
+    color: rgba(255, 255, 255, 0.9);
+    padding-bottom: 2px;
+}
+
 .dropdown {
     margin-right: 15px;
 }
@@ -67,12 +94,18 @@ body {
     color: black;
 }
 
+.drop-mobile {
+    position: absolute;
+    right: 0px;
+}
+
 .logo-mobile {
-    display: flex;
-    width: 100%;
     height: 100%;
     align-items: center;
     padding-left: 10px;
+    position: absolute;
+    left: 0px;
+    padding-top: 4px;
 }
 
 .logo-mobile img {
@@ -447,6 +480,10 @@ input[type=checkbox] {
     width: auto;
 }
 
+.form-livros {
+    width: 50%;
+}
+
 #lista-sedes {
     display: none;
     margin-top: 15px;
@@ -539,6 +576,15 @@ input[type=checkbox] {
     .hometitle {
         text-align: center;
         font-size: 2rem;
+    }
+
+    #contato-title h1 {
+        font-size: 1.6rem;
+        text-align: justify;
+    }
+
+    .mobile-wider {
+        width: 90%;
     }
 }
 
