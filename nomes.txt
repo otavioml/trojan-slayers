@@ -1,9 +1,0 @@
-HOMEPAGE: index.hmtl
-LIVROS: livros.html
-SEDES: sedes.html
-NOVIDADES: novidades.html
-LIVROS ESPECÍFICOS: livroX.html
-SEDES ESPECÍFICAS: sedeX.html
-CONTATO: contato.html
-SOBRE: sobre.html
-CSS: styles.css
