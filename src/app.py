@@ -1,9 +1,8 @@
-from flask import Flask, render_template
-import os
+from flask import Flask, render_template, url_for, request, redirect
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
-template_dir = os.path.abspath('./templates')
-
-app = Flask(__name__, template_folder='./templates')
+app = Flask(__name__)
 
 @app.route('/')
 def home():
