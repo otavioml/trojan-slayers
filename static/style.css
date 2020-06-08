@@ -1,0 +1,667 @@
+/* 
+ORANGE: #f7b267
+MID1: #f79d65
+MID2: #f4845f
+MID3: #f27059
+RED: #c44536
+DARKRED: #772e25    
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+*{
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+}
+
+* option {
+    color: #495057;
+    padding-bottom: 0px;
+    font-family: 'Monaco', monospace;
+}
+
+* a:hover {
+    transition: color 0.2s ease;
+}
+
+* a {
+    transition: color 0.1s ease;
+}
+body {
+    background-color: #ee5e4d;
+}
+
+.card * {
+    color: black;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+    transition: box-shadow 0.5s ease;
+    animation: hoverZoom 0.5s;
+    transform: scale(1.05);
+}
+
+.pc-header {
+    display: none;
+}
+
+.mobile-header {
+    display: block;
+}
+
+.mobile-header .fixed-menu, .mobile-header .filler {
+    height: 70px;
+}
+
+.mobile-header .fixed-menu {
+    display: flex;
+    justify-content: center;
+}
+
+.pesquisa-mobile {
+    padding-top: 2px;
+}
+
+.pesquisa-mobile input {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: white;
+    border-bottom: solid white 1px;
+}
+
+.pesquisa-mobile input:focus {
+    box-shadow: none !important;
+    outline: none;
+}
+
+.pesquisa-mobile ::placeholder{
+    font-weight: 1;
+    color: rgba(255, 255, 255, 0.9);
+    padding-bottom: 2px;
+}
+
+.dropdown {
+    margin-right: 15px;
+}
+.dropdown-menu li {
+    height: auto !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    line-height: 0px !important;
+}
+.dropdown-menu li a {
+    color: black;
+}
+
+.drop-mobile {
+    position: absolute;
+    right: 0px;
+}
+
+.logo-mobile {
+    height: 100%;
+    align-items: center;
+    padding-left: 10px;
+    position: absolute;
+    left: 0px;
+    padding-top: 4px;
+}
+
+.logo-mobile img {
+    transform: scale(0.85);
+}
+    
+/* FORMS */
+#modal{
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#modal .content h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#modal form{
+    width: 80%;
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 0px 10px;
+
+}
+
+.content form div:nth-child(3),
+.content form div:nth-child(4),
+.content form div:nth-child(5){
+    grid-column: span 2;
+} 
+
+form input,
+form textarea{
+    width: 100%;
+
+    padding: 12px;
+
+    box-sizing: border-box;
+
+    border-radius: 6px;
+    border: none;
+
+    outline: none;
+
+    font-size: 16px;
+
+}
+
+form label {
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.8px;
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    color: black;
+}
+
+#modal .content p{
+    text-align: center;
+}
+
+
+.menu-superior ul{
+    text-align: center;
+}
+
+.menu-superior ul li{
+    display: inline;
+    padding: 30px;
+    margin: 30px;
+    text-align: center;
+}
+
+.editar-excluir-sede, .adicionar-novidade {
+    display: flex;
+    align-items: center;
+
+}
+.editar-excluir-sede button {
+    height: 50%;
+    margin: auto;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.img-in-div {
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.article-img {
+    text-align: center;
+    margin-top: 15px
+}
+
+.capa-livro {
+    text-align: center;
+   
+}
+
+.capa-livro img {
+    border: 2px solid white;
+}
+
+.button-link, button a, .navbar a {
+    color: white;
+}
+
+.button-link:hover, button a:hover, .navbar a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.nome-data-novidade, .editar-excluir-livro {
+    display: block;
+    align-items: right;
+    text-align: right;
+}
+
+.livros td {
+    text-align: center;
+}
+
+.editar-excluir-livro {
+    margin-right: 15px;
+}
+
+.adicionar-livro {
+    display: inline;
+    float: right;
+    margin-right: 1.4%;
+}
+
+.livro-info .tabela-livro-esp td{
+    padding-bottom: 6%;
+}
+
+.livro-info td p{
+    display: block;
+    text-align: right;
+}
+
+.fixed-menu {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    background-color: #5e2129;
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+}
+
+.fixed-menu nav {
+    margin: auto;
+}
+
+.fixed-menu li {
+    list-style: none;
+    padding: 0 30px;
+    display: inline-block;
+    height: 100px;
+    line-height: 100px;
+    box-sizing: border-box;
+    font-size: 1.25rem;
+}
+
+
+.fixed-menu li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color ease 0.4s;
+}
+
+.fixed-menu a {
+    color: white;
+}
+
+.fixed-menu a:hover {
+    text-decoration: none;
+}
+
+.logo-top {
+    float: left;
+    position: fixed;
+    background-color: #F3EFED;
+    padding-left: 1%;
+    padding-right: 0.8%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    z-index: 2;
+}
+
+.search-top {
+    float: right;
+    position: fixed;
+    right: 2%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.search-top input {
+    border: none;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.filler {
+    height: 100px;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.about p {
+    font-size: 1.2rem;
+}
+
+
+.table-sedes{
+    display: flex;
+    justify-content: center;
+    border-collapse: separate;
+}
+
+.table-sedes th{
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 50px;
+}
+
+.table-sedes td{
+    padding: 15px 10px;
+
+}
+
+.table-sedes a:hover {
+    text-decoration: none;
+}
+
+.table-sedes-home a:hover {
+    text-decoration: none;
+}
+
+.spaced-button {
+    padding-left: 15px;
+}
+
+.card-titulo {
+    position: relative;
+    height: 60px;
+}
+
+.card-autor {
+    position: relative;
+    height: 38px;
+}
+
+.card img {
+    height: 300px;
+    max-width: 100%;
+}
+
+.card-text {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.cardboard-livros .row {
+    margin-top: 15px;
+}
+
+.cardboard-livros .row .firstrow {
+    margin-top: 15px;
+}
+
+.card {
+    padding: 0px 15px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    height: 97%;
+    transition: box-shadow 0.5s ease;
+    animation: hoverOut 0.5s;
+}
+
+.smaller-padding {
+    padding: 0px 10px;
+}
+
+.card-desc {
+    margin-bottom: 0px;
+    font-size: small;
+    text-align: center;
+}
+
+.btn-primary {
+    background: #ffbb73;
+    border: none;
+}
+.btn-primary:hover {
+    background: #ff982b;
+}
+.btn-primary:focus {
+    background: #ffbb73;
+    border: none !important;
+    box-shadow: none !important;
+}
+.btn-primary:active {
+    background: #ed8518 !important;
+    border: none !important;
+}
+
+
+table a {
+    text-decoration: none;
+    color: white;
+}
+
+table button a:hover {
+    color: white;
+}
+
+table a:hover {
+    text-decoration: none;
+    color: #ff982b;
+}
+
+#botao-enviar  {
+    padding: 2% 0 2% 0;
+    font-size: 20px;
+}
+
+header input{
+    color: black;
+}
+
+ #myfile{
+    color: white !important;
+    padding-left: 0;
+}
+
+.data-livros  {
+    color: #6c757d;
+}
+
+.data-livros input[type="date"]::-webkit-inner-spin-button,
+ input[type="date"]::-webkit-calendar-picker-indicator {
+     display: none;
+     -webkit-appearance: none;
+ }
+ .form-check-input {
+    margin-top: 1.05rem;
+ }
+
+.form-check {
+    margin-right: 70%;
+}
+
+input[type=checkbox] {
+    width: auto;
+}
+
+.form-livros {
+    width: 50%;
+}
+
+#lista-sedes {
+    display: none;
+    margin-top: 15px;
+}
+
+/* ESTILOS CONFORME TELA */
+/* CELULARES */
+@media (min-width: 300px) {
+    .about-container {
+        max-width: 85% !important;
+    }
+
+}
+
+/* TELAS MENORES */
+@media (min-width: 987px) {
+    .about-container {
+        max-width: 80% !important;
+    }
+}
+
+/* PC */
+@media (min-width: 1280px) {
+    .about-container {
+        max-width: 50% !important;
+    }
+
+    .sedes-recentes-mobile {
+        display: none;
+    }
+
+    .pc-header {
+        display: block;
+    }
+
+    .mobile-header {
+        display: none;
+    }
+
+    .editar-excluir-sede, .adicionar-novidade {
+        justify-content: center;
+    }
+
+}
+
+.sede-mobile {
+    padding: 20px 0 10px 0;
+    border-bottom: solid 2px white;
+    position: relative;
+    
+}
+
+.sede-final {
+    border: none;
+}
+
+.editar-excluir-sedes {
+    display: flex;
+    float: right;
+    float: right;
+    position: relative;
+    bottom: 60px;
+    right: 2.38%;
+}
+
+.excluir-sedes {
+    margin-left: 8%;
+    
+}
+
+@media (max-width: 768px) {
+    
+    .homepage .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .homepage .col-sm-3 {
+        margin-bottom: 6%;
+    }
+
+    .tabela-homepage {
+        display: none;
+    }
+
+    .hometitle-mobile {
+        padding: 10px 0 15px 0;
+    }
+
+    .sede-mobile {
+        padding: 20px 0 20px 0;
+        border-bottom: solid 2px white;
+    }
+
+    .sede-final {
+        border: none;
+    }
+
+    .editar-excluir-sede, .adicionar-novidade {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .livro-especifico-tabela-mobile {
+        display: none;
+    }
+
+    .excluir-sedes {
+        margin-left: 0;
+    }
+
+    .editar-excluir-sedes {
+        display: inline-block;
+        float: none;
+        position: relative;
+        bottom: 0;
+        right: 0;
+    }
+    
+
+}
+
+@media (max-width: 1280px) {
+    .cardboard-livros .card img {
+        height: 400px;
+    }
+
+    .card img {
+        height: 370px;
+    }
+
+    .hometitle {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    #contato-title h1 {
+        font-size: 1.6rem;
+        text-align: justify;
+    }
+
+    .mobile-wider {
+        width: 90%;
+    }
+}
+
+.no-dec {
+    text-decoration: none !important;
+}
+
+.hometitle{
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 0 30px 0;
+    text-transform: uppercase;
+}
+
+@keyframes hoverZoom {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.05);
+    }
+}
+
+@keyframes hoverOut {
+    from {
+        transform: scale(1.05);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* BOOTSTRAP OVERRIDE */
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #ed8518;
+    border-color: #d67a16;
+}
