@@ -80,7 +80,7 @@ class Disponibilidade(db.Model):
 
 @app.route('/')
 def home():
-    return 'oi'
+    return render_template('sede_esp.html')
 
 if __name__ == "__main__":
     app.run(debug = True)
