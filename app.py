@@ -74,9 +74,13 @@ class Novidades(db.Model):
 
 class Disponibilidade(db.Model):
     __tablename__ = 'disponibilidade'
-    id = db.Column(db.Integer, primary_key=True)
-    livroid = db.Column(db.Integer)
-    sedeid = db.Column(db.Integer)
+
+    id = db.Column(db.Integer, primary_key = True)
+    livroid = db.Column(db.Integer, db.ForeignKey('livros.id'))
+    sedeid = db.Column(db.Integer, db.ForeignKey('sedes.id'))
+
+    title = db.relationship('livros', foreign_keys=livroid)
+    alocation = db.relationship('sedes', foreign_keys=sedeid)
 
     def __init__(self, livroid, sedeid):
         self.livroid = livroid
@@ -84,8 +88,8 @@ class Disponibilidade(db.Model):
 
 
 @app.route('/')
-def index():
-    return 'oi'
+def home():
+    return render_template('sede_esp.html')
 
 
 if __name__ == "__main__":
