@@ -88,8 +88,58 @@ class Disponibilidade(db.Model):
 
 
 @app.route('/')
-def home():
+def index():
+    return render_template('index.html')
+
+
+@app.route('/livros/')
+def livros():
+    return render_template('livros.html')
+
+
+@app.route('/livros/livro_esp/')
+def livro_esp():
+    return render_template('livro_esp.html')
+
+
+@app.route('/livros/adicionar-livro/')
+def adicionar_livro():
+    return render_template('adicionar-livro.html')
+
+
+@app.route('/sedes/')
+def sedes():
+    return render_template('sedes.html')
+
+
+@app.route('/sedes/sede_esp/')
+def sede_esp():
     return render_template('sede_esp.html')
+
+
+@app.route('/sedes/adicionar-sede/')
+def adicionar_sede():
+    return render_template('adicionar-sede.html')
+
+
+@app.route('/novidades/')
+def novidades():
+    return render_template('novidades.html')
+
+
+@app.route('/novidades/adicionar-novidades/')
+def adicionar_novidades():
+    return render_template('adicionar-novidades.html')
+
+
+@app.route('/contato/')
+def contato():
+    return render_template('contato.html')
+
+
+@app.route('/sobre/')
+def sobre():
+    return render_template('sobre.html')
 
 
 if __name__ == "__main__":
