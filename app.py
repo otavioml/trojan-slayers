@@ -75,7 +75,7 @@ class Novidades(db.Model):
 class Disponibilidade(db.Model):
     __tablename__ = 'disponibilidade'
 
-    id = db.Column(db.Integer, primary_key = True)
+    id = db.Column(db.Integer, primary_key=True)
     livroid = db.Column(db.Integer, db.ForeignKey('livros.id'))
     sedeid = db.Column(db.Integer, db.ForeignKey('sedes.id'))
 
