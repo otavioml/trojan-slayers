@@ -11,7 +11,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'da
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
-Migrate(app,db)
+Migrate(app, db)
+
 
 # TABLES
 class Livro(db.Model):
@@ -35,6 +36,7 @@ class Livro(db.Model):
     def __repr__(self):
         return f'<Livro {self.title}>'
 
+
 class Sede(db.Model):
     __tablename__ = 'sedes'
     id = db.Column(db.Integer, primary_key=True)
@@ -52,6 +54,7 @@ class Sede(db.Model):
     def __repr__(self):
         return f'<Sede {self.name}>'
 
+
 class Novidades(db.Model):
     __tablename__ = 'novidades'
     content = db.Column(db.Integer, primary_key=True)
@@ -59,7 +62,7 @@ class Novidades(db.Model):
     author = db.Column(db.String)
     pub_date = db.Column(db.String)
 
-    def __init__(self,title, content, author, pub_date):
+    def __init__(self, title, content, author, pub_date):
         self.title = title
         self.content = content
         self.author = author
@@ -68,9 +71,10 @@ class Novidades(db.Model):
     def __repr__(self):
         return f'<Novidade {self.title}>'
 
+
 class Disponibilidade(db.Model):
     __tablename__ = 'disponibilidade'
-    id = db.Column(db.Integer, primary_key = True)
+    id = db.Column(db.Integer, primary_key=True)
     livroid = db.Column(db.Integer)
     sedeid = db.Column(db.Integer)
 
@@ -78,10 +82,11 @@ class Disponibilidade(db.Model):
         self.livroid = livroid
         self.sedeid = sedeid
 
+
 @app.route('/')
-def home():
+def index():
     return 'oi'
 
-if __name__ == "__main__":
-    app.run(debug = True)
 
+if __name__ == "__main__":
+    app.run(debug=True)
