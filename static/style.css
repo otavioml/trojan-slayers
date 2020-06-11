@@ -554,6 +554,10 @@ input[type=checkbox] {
     
 }
 
+.nome-sedes:hover {
+    text-decoration: none !important;
+}
+
 @media (max-width: 768px) {
     
     .homepage .row {
