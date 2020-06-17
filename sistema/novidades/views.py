@@ -7,7 +7,8 @@ novidades = Blueprint('novidades', __name__, template_folder="templates")
 
 @novidades.route('/')
 def index():
-    return render_template('novidades.html')
+    novidades = Novidade.query.order_by(Novidade.id.desc()).all()
+    return render_template('novidades.html', novidades_front=novidades)
 
 
 @novidades.route('/adicionar-novidade/', methods=['GET', 'POST'])

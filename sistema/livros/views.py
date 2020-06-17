@@ -7,7 +7,8 @@ livros = Blueprint('livros', __name__, template_folder="templates")
 
 @livros.route('/')
 def index():
-    return render_template('livros.html')
+    livros = Livro.query.order_by(Livro.id.desc()).all()
+    return render_template('livros.html', livros_front=livros)
 
 
 @livros.route('/livro_esp/')

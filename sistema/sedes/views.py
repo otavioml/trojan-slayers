@@ -7,7 +7,8 @@ sedes = Blueprint('sedes', __name__, template_folder="templates")
 
 @sedes.route('/')
 def index():
-    return render_template('sedes.html')
+    sedes = Sede.query.order_by(Sede.id.desc()).all()
+    return render_template('sedes.html', sedes_front=sedes)
 
 
 @sedes.route('/sede_esp/')
