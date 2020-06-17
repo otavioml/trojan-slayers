@@ -3,12 +3,13 @@ from sistema import db
 
 livros = Blueprint('livros', __name__)
 
+
 @livros.route('/')
 def livros():
     return render_template('livros.html')
 
 
-@livros.route('/livro_esp/')
+@livros.route('/livro_esp')
 def livro_esp():
     return render_template('livro_esp.html')
 
