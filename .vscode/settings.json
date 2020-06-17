@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\rafae\\anaconda3\\python.exe",
+    "python.pythonPath": "virtual\\Scripts\\python.exe",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true
