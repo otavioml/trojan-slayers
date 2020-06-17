@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "virtual\\Scripts\\python.exe",
+    "python.pythonPath": "C:\\Users\\otavi\\Anaconda3\\python.exe",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true

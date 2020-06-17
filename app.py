@@ -144,7 +144,8 @@ def adicionar_livro():
 
 @app.route('/sedes/')
 def sedes():
-    return render_template('sedes.html')
+    sedes = Sede.query.all()
+    return render_template('sedes.html', sedes_front = sedes)
 
 
 @app.route('/sedes/sede_esp/')
