@@ -82,74 +82,30 @@
                 </div>
             </div>
             <div class="row row-mobile">
+                {% for livro in livros_front %}
+
                 <div class="col-sm-3 smaller-padding cards-livros-mobile">
                     <div class="card">  
                         <div class="card-body">
                             <div class="card-titulo">
-                                <p class="card-text">O Labririnto do Fauno</p>
+                                <p class="card-text">{{livro.title}}</p>
                             </div>
                             <div class="card-autor">
-                                <p class="card-desc">Fantasia - Guillermo Del Toro & Cornelia Funke</p>
+                                <p class="card-desc">{{livro.gender}} - {{livro.author}}</p>
                             </div>
                         </div>
                         <img src="https://m.media-amazon.com/images/I/51HuuYEC3AL.jpg">
                         <div class="card-body">
-                            <p class="card-text">R$ 42,99</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 smaller-padding cards-livros-mobile">
-                    <div class="card">  
-                        <div class="card-body">
-                            <div class="card-titulo">
-                                <p class="card-text">O Hobbit</p>
-                            </div>
-                            <div class="card-autor">
-                                <p class="card-desc">Fantasia - J.R.R. Tolkien</p>
-                            </div>
-                        </div>
-                        <img src="https://assets.xtechcommerce.com/uploads/images/medium/a314ca20a9387e3ae9dbc129780ae984.jpg">
-                        <div class="card-body">
-                            <p class="card-text">R$ 45,99</p>
+                            <p class="card-text">{{livro.price}}</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-sm-3 smaller-padding cards-livros-mobile">
-                    <div class="card">  
-                        <div class="card-body">
-                            <div class="card-titulo">
-                                <p class="card-text">The Witcher Vol. 1 - O Último Desejo</p>
-                            </div>
-                            <div class="card-autor">
-                                <p class="card-desc">Fantasia - Andrzej Sapkowski</p>
-                            </div>
-                        </div>
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/618iEKbcBDL.jpg">
-                        <div class="card-body">
-                            <p class="card-text">R$ 53,23</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 smaller-padding cards-livros-mobile">
-                    <div class="card">  
-                        <div class="card-body">
-                            <div class="card-titulo">
-                                <p class="card-text">The Witcher Vol. 2 - A Espada do Destino</p>
-                            </div>
-                            <div class="card-autor">
-                                <p class="card-desc">Fantasia - Andrzej Sapkowski</p>
-                            </div>
-                        </div>
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/61Rof9MClEL.jpg">
-                        <div class="card-body">
-                            <p class="card-text">R$ 46,72</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+
 
             </div>
-            <div class="row row-mobile">
+            <!--<div class="row row-mobile">
                 <div class="col-sm-3 smaller-padding cards-livros-mobile">
                     <div class="card">  
                         <div class="card-body">
@@ -215,7 +171,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
             <br>
             </div>
     </main>

@@ -91,7 +91,8 @@ def index():
 
 @app.route('/livros/')
 def livros():
-    return render_template('livros.html')
+    livros = Livro.query.order_by(Livro.id.desc()).all()
+    return render_template('livros.html', livros_front = livros)
 
 
 @app.route('/livros/livro_esp/')
