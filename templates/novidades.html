@@ -13,27 +13,18 @@
             <br>
             <br>
         <div class="col-sm-12">
+            {% for novidade in novidades_front %}
             <div class="novidade">
-                <h4>Título</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, ducimus. Pariatur nesciunt molestias eaque sequi eos consectetur perferendis? A perferendis accusamus cum rem? Cum sit minima amet, dolor voluptate nostrum.</p>
+                <h4>{{novidade.title}}</h4>
+                <p>{{novidade.content}}</p>
                 <div class="nome-data-novidade">
-                    <p><strong>Joe Jordan, 01/01/2001</strong></p>
+                    <p><strong>{{novidade.author}},{{novidade.pub_date}}</strong></p>
                     
                     <a href="#" class="button-link"><button type="button" class="btn btn-primary">Editar</button></a>
                     <a href="#" class="button-link"><button type="button" class="btn btn-primary">Excluir</button></a>
                     
                 </div>
-            </div>
-            <div class="novidade">
-                <h4>Título</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, ducimus. Pariatur nesciunt molestias eaque sequi eos consectetur perferendis? A perferendis accusamus cum rem? Cum sit minima amet, dolor voluptate nostrum.</p>
-                <div class="nome-data-novidade">
-                    <p><strong>Joe Jordan, 01/01/2001</strong></p>
-                    
-                    <a href="#" class="button-link"><button type="button" class="btn btn-primary">Editar</button></a>
-                    <a href="#" class="button-link"><button type="button" class="btn btn-primary">Excluir</button></a>
-                    
-                </div>
+            {% endfor %}
             </div>
             <div class="novidade">
                 <h4>Título</h4>

@@ -144,7 +144,7 @@ def adicionar_livro():
 
 @app.route('/sedes/')
 def sedes():
-    sedes = Sede.query.all()
+    sedes = Sede.query.order_by(Sede.id.desc()).all()
     return render_template('sedes.html', sedes_front = sedes)
 
 
@@ -157,9 +157,9 @@ def sede_esp():
 def adicionar_sede():
     if request.method == 'POST':
         sede_name = request.form['sede-name']
-        sede_phone = request.form['address']
-        sede_address = request.form['phone']
-        new_sede = Sede(sede_name, sede_address, sede_phone, sede_name)
+        sede_address = request.form['address']
+        sede_phone = request.form['contact']
+        new_sede = Sede(sede_name, sede_phone, sede_address, sede_name)
 
         db.session.add(new_sede)
         db.session.commit()
@@ -171,7 +171,8 @@ def adicionar_sede():
 
 @app.route('/novidades/')
 def novidades():
-    return render_template('novidades.html')
+    novidades = Novidade.query.order_by(Novidade.id.desc()).all()
+    return render_template('novidades.html', novidades_front = novidades)
 
 
 @app.route('/novidades/adicionar-novidade/', methods=['GET', 'POST'])
