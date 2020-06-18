@@ -19,7 +19,7 @@
                     <h1 style="display: inline;">{{sede.name}}</h1>
                         <div style="float: right; padding-top:7px">
                             <a href="#"><i class="fas fa-edit" style="font-size: 30px;"></i></a>
-                            <a href="#"><i class="fas fa-trash-alt" style="font-size: 30px;"></i></a>
+                            <a href="{{url_for('sedes.excluir_sede', _id=sede.id)}}"><i class="fas fa-trash-alt" style="font-size: 30px;"></i></a>
                         </div>
                     <div class="article-img">
                         <img class="rounded img-in-div" src="../../static/images/{{sede.picture}}" alt="Foto da Sede">
@@ -45,8 +45,8 @@
                             <p>{{sede.address}}</p>
                             <p>{{sede.contact}}</p>
                             <button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a>
-                            <button type="button" class="btn btn-primary"><a href="#">Excluir</a></button>
-                        </div>    
+                            <button type="button" class="btn btn-primary"><a href="{{url_for('sedes.excluir_sede', _id=sede.id)}}">Excluir</a></button>
+                        </div>      
                     </div>
                     <iframe style="border-radius: 5px" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15943.753597051122!2d-44.2554746!3d
                     -2.5270144!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2001aa05a5a8ba7e!2sShopping%20da%20Ilha!5e0!3m2!1
