@@ -58,13 +58,11 @@
         </main>
         <!-- FUNÇÃO PARA MOSTRAR O DROPDOWN DAS SEDES -->
         <script type="text/javascript">
-            function show() {
-                if (document.getElementById("customCheck2").checked){
-                    document.getElementById("lista-sedes").style.display = "block";
-                } else {
-                    document.getElementById("lista-sedes").style.display = "none";
-                }
-            }
+            $(document).ready(function(){
+                $("#customCheck2").click(function(){
+                  $("#lista-sedes").toggle();
+                });
+              });
         </script>
 
 {% endblock %}
