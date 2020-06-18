@@ -1,10 +1,12 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from sistema import db
+from sistema.novidades.models import Novidade
 
-Novidades = Blueprint('novidades', __name__)
+novidades = Blueprint('novidades', __name__, template_folder="templates")
+
 
 @novidades.route('/')
-def novidades():
+def index():
     return render_template('novidades.html')
 
 

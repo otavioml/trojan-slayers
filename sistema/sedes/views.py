@@ -1,10 +1,12 @@
 from flask import Blueprint, render_template, request, redirect
 from sistema import db
+from sistema.sedes.models import Sede
 
-sedes = Blueprint('sedes', __name__)
+sedes = Blueprint('sedes', __name__, template_folder="templates")
+
 
 @sedes.route('/')
-def sedes():
+def index():
     return render_template('sedes.html')
 
 
@@ -27,4 +29,3 @@ def adicionar_sede():
 
     else:
         return render_template('adicionar-sede.html')
-

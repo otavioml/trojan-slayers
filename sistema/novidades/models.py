@@ -1,4 +1,6 @@
 from sistema import db
+from datetime import datetime
+
 
 class Novidade(db.Model):
     __tablename__ = 'novidade'

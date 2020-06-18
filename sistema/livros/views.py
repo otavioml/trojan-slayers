@@ -1,15 +1,16 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from sistema import db
+from sistema.livros.models import Livro
 
-livros = Blueprint('livros', __name__)
+livros = Blueprint('livros', __name__, template_folder="templates")
 
 
 @livros.route('/')
-def livros():
+def index():
     return render_template('livros.html')
 
 
-@livros.route('/livro_esp')
+@livros.route('/livro_esp/')
 def livro_esp():
     return render_template('livro_esp.html')
 
@@ -55,5 +56,3 @@ def adicionar_livro():
         return redirect(url_for('livros'))
 
     return render_template('adicionar-livro.html')
-
-    return render_template('sobre.html')
