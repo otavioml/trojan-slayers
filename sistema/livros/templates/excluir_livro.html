@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <div  class="form-group d-flex flex-fill justify-content-center">
+        <div class="input-wrapper" >
+            <h1>Você tem certeza que quer excluir "{{livro.title}}"?</h1>
+            <form class="form-livros mobile-wider" action="" method="POST" enctype="multipart/form-data" style="display: flex; justify-content: center;">
+                <input type="submit" value="Sim!" class="btn btn-primary" style="width: 50%;">
+                <a href="{{url_for('livros.livro_esp', _id=livro.id)}}" class="btn btn-primary" style="width: 50%;">Não!</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -16,7 +16,7 @@ def index():
 @livros.route('/livro-esp/<_id>')
 def livro_esp(_id):
     livro = Livro.query.get_or_404(_id)
-    return render_template('livro_esp.html', livro = livro)
+    return render_template('livro_esp.html', livro=livro)
 
 
 @livros.route('/adicionar-livro/', methods=['GET', 'POST'])
@@ -73,3 +73,15 @@ def adicionar_livro():
         return redirect(url_for('livros.index'))
 
     return render_template('adicionar-livro.html')
+
+
+@livros.route('/excluir_livro/<_id>', methods=['GET', 'POST'])
+def excluir_livro(_id):
+    livro = Livro.query.get_or_404(_id)
+
+    if request.method == 'POST':
+        db.session.delete(livro)
+        db.session.commit()
+
+        return redirect(url_for('livros.index'))
+    return render_template('excluir_livro.html', livro=livro)
