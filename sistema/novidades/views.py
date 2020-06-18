@@ -30,3 +30,15 @@ def adicionar_novidade():
         return redirect(url_for('novidades.index'))
 
     return render_template('adicionar-novidade.html')
+
+
+@novidades.route('/excluir_novidade/<_id>', methods=['GET', 'POST'])
+def excluir_novidade(_id):
+    novidade = Novidade.query.get_or_404(_id)
+
+    if request.method == 'POST':
+        db.session.delete(novidade)
+        db.session.commit()
+
+        return redirect(url_for('novidades.index'))
+    return render_template('excluir_novidade.html', novidade=novidade)
