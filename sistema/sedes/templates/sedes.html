@@ -13,27 +13,19 @@
         <br>
         <br>
         <br>
-        <!--DIV para MOBILE-->
+        <!--DIV para DISPLAY-->
         <div>
-            <div class="sede-mobile">
-                <a class="nome-sedes" href="/sedes/sede_esp/">
-                    <h3>Sede Shopping da Ilha</h3>
-                </a>
-                <p>AV Daniel Dela Touche, Bequimão Shopping da Ilha, São Luis -MA</p>
-                <p>(98) 3014-1434</p>
-                <div class="editar-excluir-sedes">
-                    <button type="button" class="btn btn-primary"><a href="adicionar-sede">Editar</a></button></a>
-                    <button type="button" class="btn btn-primary excluir-sedes"><a href="#">Excluir</a></button>
-                </div>
-            </div>
+            {% if not sedes_front %}
+            <h2>Ainda não há sedes cadastradas</h2>
+            {% endif %}
 
             {% for sede in sedes_front %}           
             <div class="sede-mobile">
-                <a class="nome-sedes" href="#">
+                <a class="nome-sedes" href="/sedes/sede-especifica/{{sede.id}}">
                     <h3>{{sede.name}}</h3>
                 </a>
-                <p>{{sede.contact}}</p>
                 <p>{{sede.address}}</p>
+                <p>{{sede.contact}}</p>
                 <div class="editar-excluir-sedes">
                     <button type="button" class="btn btn-primary"><a href="sede_esp.html">Editar</a></button></a>
                     <button type="button" class="btn btn-primary excluir-sedes"><a href="#">Excluir</a></button>

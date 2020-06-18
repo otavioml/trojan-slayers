@@ -8,7 +8,7 @@ class Novidade(db.Model):
     title = db.Column(db.String)
     content = db.Column(db.String)
     author = db.Column(db.String)
-    pub_date = db.Column(db.DateTime, default=datetime.utcnow)
+    pub_date = db.Column(db.String)
 
     def __init__(self, title, content, author):
         self.title = title

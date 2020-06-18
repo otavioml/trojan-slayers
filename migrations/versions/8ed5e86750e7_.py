@@ -1,8 +1,8 @@
-"""Commit inicial
+"""empty message
 
-Revision ID: 3fddf1bf65cd
+Revision ID: 8ed5e86750e7
 Revises: 
-Create Date: 2020-06-16 20:36:15.955185
+Create Date: 2020-06-18 01:05:13.811830
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '3fddf1bf65cd'
+revision = '8ed5e86750e7'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -30,8 +30,8 @@ def upgrade():
     sa.Column('gender', sa.String(), nullable=True),
     sa.Column('author', sa.String(), nullable=True),
     sa.Column('price', sa.String(), nullable=True),
-    sa.Column('pub_date', sa.Date(), nullable=True),
-    sa.Column('avaliable', sa.Boolean(), nullable=True),
+    sa.Column('pub_date', sa.String(), nullable=True),
+    sa.Column('available', sa.Boolean(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('novidade',
@@ -39,7 +39,7 @@ def upgrade():
     sa.Column('title', sa.String(), nullable=True),
     sa.Column('content', sa.String(), nullable=True),
     sa.Column('author', sa.String(), nullable=True),
-    sa.Column('pub_date', sa.DateTime(), nullable=True),
+    sa.Column('pub_date', sa.String(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('sede',

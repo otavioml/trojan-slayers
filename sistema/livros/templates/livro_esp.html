@@ -8,29 +8,29 @@
             <!--Duas div, a primeira contendo a imagem do livro, a segunda informações-->
             <div class="row">
                 <div class="col-sm-6 capa-livro">
-                    <img src="../../static/images/O-Mundo-de-Sofia2.jpg" alt="" height="400px" class="rounded img-in-div">
+                    <img src="../../static/images/{{livro.cover}}" alt="" height="400px" class="rounded img-in-div">
                 </div>
                 <div class="livro-info col-sm-6">
                     <table  class="tabela-livro-esp" class="livro-especifico-tabela-mobile">
                         <tr>
                             <td><h4>TÍTULO</h4></td>
-                            <td><p>O mundo de Sofia</p></td>
+                            <td><p>{{livro.title}}</p></td>
                         </tr>
                         <tr>
                             <td><h4>AUTOR</h4></td>
-                            <td><p>Jostein Gaarder</p></td>
+                            <td><p>{{livro.author}}</p></td>
                         </tr>
                         <tr>
                             <td><h4>GÊNERO</h4></td>
-                            <td><p>Romance, Romance filosófico</p></td>
+                            <td><p>{{livro.gender}}</p></td>
                         </tr>
                         <tr>
                             <td><h4>PUBLICAÇÃO</h4></td>
-                            <td><p>1991</p></td>
+                            <td><p>{{livro.pub_date.replace('-', '/')}}</p></td>
                         </tr>
                         <tr>
                             <td><h4>DISPONIBILIDADE</h4></td>
-                            <td><p>2 Exemplares</p></td>
+                            <td><p>{% if livro.available %}Disponível{% endif %}{% if not livro.available%}Indisponível{% endif %}</p></td>
                         </tr>
                     </table>
                     <!--Botões excluir e editar-->

@@ -13,88 +13,23 @@
             <br>
             <br>
         <!--Cards-->
+            {% if not livros %}
+            <h2>Ainda não há livros registrados</h2>
+            {% endif %}
             <div class="row row-mobile">
-                <div class="col-sm-3 smaller-padding cards-livros-mobile">
-                    <a class="no-dec" href="/livros/livro_esp/">
-                        <div class="card">  
-                            <div class="card-body">
-                                <div class="card-titulo">
-                                    <p class="card-text">O Mundo de Sofia</p>
-                                </div>
-                                <div class="card-autor">
-                                    <p class="card-desc">Romance - Jostein Gaarder</p>
-                                </div>
-                            </div>
-                            <img src="../static/images/O-Mundo-de-Sofia2.jpg">
-                            <div class="card-body">
-                                <p class="card-text">R$ 30,90</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-3 smaller-padding cards-livros-mobile">
-                    <div class="card">  
-                        <div class="card-body">
-                            <div class="card-titulo">
-                                <p class="card-text">A Culpa é das Estrelas</p>
-                            </div>
-                            <div class="card-autor">
-                                <p class="card-desc">Sick Lit - John Green</p>
-                            </div>
-                        </div>
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/61ho40YQCkL.jpg">
-                        <div class="card-body">
-                            <p class="card-text">R$ 22,90</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 smaller-padding cards-livros-mobile">
-                    <div class="card">  
-                        <div class="card-body">
-                            <div class="card-titulo">
-                                <p class="card-text">Extraordinário</p>
-                            </div>
-                            <div class="card-autor">
-                                <p class="card-desc">Sick Lit - John Green</p>
-                            </div>
-                        </div>
-                        <img src="https://images.livrariasaraiva.com.br/imagemnet/imagem.aspx/?pro_id=4663423&qld=90&l=830&a=-1=1007943217">
-                        <div class="card-body">
-                            <p class="card-text">R$ 39,90</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 smaller-padding cards-livros-mobile">
-                    <div class="card">  
-                        <div class="card-body">
-                            <div class="card-titulo">
-                                <p class="card-text">Como Eu Era Antes de Você</p>
-                            </div>
-                            <div class="card-autor">
-                                <p class="card-desc">Romance - Jojo Moyes</p>
-                            </div>
-                        </div>
-                        <img src="../static/images/como_eu_era_antes_de_voce.jpg">
-                        <div class="card-body">
-                            <p class="card-text">R$ 27,90</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row row-mobile">
-                {% for livro in livros_front %}
+                {% for livro in livros %}
 
                 <div class="col-sm-3 smaller-padding cards-livros-mobile">
                     <div class="card">  
                         <div class="card-body">
                             <div class="card-titulo">
-                                <p class="card-text">{{livro.title}}</p>
+                                <a class="no-dec" href="/livros/livro-esp/{{livro.id}}"><p class="card-text">{{livro.title}}</p></a>
                             </div>
                             <div class="card-autor">
                                 <p class="card-desc">{{livro.gender}} - {{livro.author}}</p>
                             </div>
                         </div>
-                        <img src="https://m.media-amazon.com/images/I/51HuuYEC3AL.jpg">
+                        <img src="../../static/images/{{livro.cover}}">
                         <div class="card-body">
                             <p class="card-text">{{livro.price}}</p>
                         </div>

@@ -8,15 +8,17 @@ class Livro(db.Model):
     author = db.Column(db.String)
     price = db.Column(db.String)
     pub_date = db.Column(db.String)
-    avaliable = db.Column(db.Boolean)
+    available = db.Column(db.Boolean)
+    cover = db.Column(db.String)
 
-    def __init__(self, title, gender, author, price, pub_date, avaliable):
+    def __init__(self, title, gender, author, price, pub_date, available, cover):
         self.title = title
         self.gender = gender
         self.author = author
         self.price = price
         self.pub_date = pub_date
-        self.avaliable = avaliable
+        self.available = available
+        self.cover = cover
 
     def __repr__(self):
         return f'<Livro {self.title}>'

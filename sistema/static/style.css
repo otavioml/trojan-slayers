@@ -369,6 +369,9 @@ form input, form textarea {
 .card-titulo {
     position: relative;
     height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-autor {

@@ -1,6 +1,8 @@
+import os
 from flask import Blueprint, render_template, request, redirect, url_for
-from sistema import db
+from sistema import app, db, allowed_image
 from sistema.livros.models import Livro
+from werkzeug.utils import secure_filename
 
 livros = Blueprint('livros', __name__, template_folder="templates")
 
@@ -8,12 +10,13 @@ livros = Blueprint('livros', __name__, template_folder="templates")
 @livros.route('/')
 def index():
     livros = Livro.query.order_by(Livro.id.desc()).all()
-    return render_template('livros.html', livros_front=livros)
+    return render_template('livros.html', livros=livros)
 
 
-@livros.route('/livro_esp/')
-def livro_esp():
-    return render_template('livro_esp.html')
+@livros.route('/livro-esp/<_id>')
+def livro_esp(_id):
+    livro = Livro.query.get_or_404(_id)
+    return render_template('livro_esp.html', livro = livro)
 
 
 @livros.route('/adicionar-livro/', methods=['GET', 'POST'])
@@ -47,13 +50,26 @@ def adicionar_livro():
             else:
                 price = "R$ " + price
             price = price + ',00'
+        if ',' not in price:
+            price = price + ',00'
         
         # Limpando espaço duplo
         price = price.replace("  ", " ")
 
-        livro = Livro(titulo, genero, autor, price, date, available)
-        db.session.add(livro)
-        db.session.commit()
-        return redirect(url_for('livros'))
+        image = request.files['myfile']
+        picture = image.filename
+
+        if not allowed_image(image.filename):
+            print("That image is not allowed")
+            return redirect('/livros/adicionar-livro/')
+        else:
+            filename = secure_filename(image.filename)
+            image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
+            livro = Livro(titulo, genero, autor, price, date, available, image.filename)
+            db.session.add(livro)
+            db.session.commit()
+            return redirect('/livros/')
+
+        return redirect(url_for('livros.index'))
 
     return render_template('adicionar-livro.html')
