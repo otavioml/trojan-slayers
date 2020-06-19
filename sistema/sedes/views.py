@@ -22,19 +22,18 @@ def adicionar_sede():
 
         # PROCESSAMENTO DE IMAGEM
         image = request.files['myfile']
-        picture = image.filename
 
         if not allowed_image(image.filename):
             print("That image is not allowed")
             return redirect('/sedes/adicionar-sede/')
         else:
             filename = secure_filename(image.filename)
-            image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
-            new_sede = Sede(sede_name, sede_address, sede_phone, picture)
+            image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
+            new_sede = Sede(sede_name, sede_address, sede_phone, filename)
             db.session.add(new_sede)
             db.session.commit()
             return redirect('/sedes/')
-        
+
     else:
         return render_template('adicionar-sede.html')
 
@@ -44,6 +43,38 @@ def sede_especifica(_id):
     sede = Sede.query.get_or_404(_id)
 
     return render_template('sede_esp.html', sede=sede)
+
+
+@sedes.route('/editar_sede/<_id>', methods=['GET', 'POST'])
+def editar_sede(_id):
+
+    sede = Sede.query.get_or_404(_id)
+
+    if request.method == 'POST':
+        name = request.form['sede-name']
+        address = request.form['address']
+        contact = request.form['contact']
+
+        # PROCESSAMENTO DE IMAGEM
+        image = request.files['myfile']
+
+        if not allowed_image(image.filename):
+            print("That image is not allowed")
+            return redirect(url_for('sedes.editar_sede'))
+        else:
+            filename = secure_filename(image.filename)
+            image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
+
+            sede.name = name
+            sede.address = address
+            sede.contact = contact
+            sede.picture = filename
+
+            db.session.commit()
+
+            return redirect(url_for('sedes.sede_especifica', _id=sede.id))
+
+    return render_template('editar_sede.html', sede=sede)
 
 
 @sedes.route('/excluir_sede/<_id>', methods=['GET', 'POST'])

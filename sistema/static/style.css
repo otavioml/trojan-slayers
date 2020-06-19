@@ -530,6 +530,14 @@ input[type=checkbox] {
         justify-content: center;
     }
 
+    .botoes-excluir {
+        width: 80%;
+        display: block;
+        padding: 10px 20px 10px 20px;
+        margin: auto;
+        font-size: x-large;
+    }
+
 }
 
 .sede-mobile {
@@ -559,6 +567,14 @@ input[type=checkbox] {
 
 .nome-sedes:hover {
     text-decoration: none !important;
+}
+
+.excluir-sim:hover{
+    background: #ff0000 !important;
+}
+
+.excluir-sim:active{
+    background: #ff0000 !important;
 }
 
 @media (max-width: 768px) {
@@ -609,6 +625,19 @@ input[type=checkbox] {
         bottom: 0;
         right: 0;
     }    
+
+    .titulo-excluir {
+        font-size: x-large;
+        margin: 0 3% .5rem 3%;
+    }
+
+    .botoes-excluir {
+        width: 80%;
+        display: block;
+        padding: 10px 20px 10px 20px;
+        margin: auto;
+        font-size: large;
+    }
 
 }
 
@@ -671,3 +700,4 @@ input[type=checkbox] {
     background-color: #ed8518;
     border-color: #d67a16;
 }
+

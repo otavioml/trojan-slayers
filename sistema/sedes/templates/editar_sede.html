@@ -4,21 +4,21 @@
     <main>
         <div class="container">
             <div  class="form-group d-flex flex-fill justify-content-center">
-                <form action="form-livros mobile-wider">
+                <form class="form-livros mobile-wider" action="" method="POST" enctype="multipart/form-data">
                     <div class="input-wrapper">
                         <label for="Nome">Nome</label>
-                        <input type="text" name="sede-name" placeholder="Digite aqui o nome da nova sede">
+                        <input type="text" name="sede-name" placeholder="Digite aqui o nome da nova sede" value="{{sede.name}}">
                     </div>
                     <div class="input-wrapper">
                         <label for="endereço">Endereço</label>
-                        <input type="text" name="sede-endereço" placeholder="Ex: AV Daniel Dela Touche, Bequimão Shopping da Ilha, São Luis -MA">
+                        <input type="text" name="address" placeholder="Ex: AV Daniel Dela Touche, Bequimão Shopping da Ilha, São Luis -MA" value="{{sede.address}}">
                     </div>
                     <div class="input-wrapper">
                         <label for="contato">Contato</label>
-                        <input type="text" name="sede-contato" placeholder="(00) 0000-0000">
+                        <input type="text" name="contact" placeholder="(00) 0000-0000"  value="{{sede.contact}}">
                     </div>
                     <div class="input-wrapper">
-                        <label for="Foto da Sede">Foto da Sede</label>
+                        <label for="Foto da Sede">Editar foto da Sede</label>
                         <input type="file" id="myfile" name="myfile">
                     </div>
                     <br>
