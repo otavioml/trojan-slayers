@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block body %}
+        <main>
+            <main>
+                <div class="container">
+                    <div  class="form-group d-flex flex-fill justify-content-center">
+                        <form class="form-livros mobile-wider" action="" method="POST" enctype="multipart/form-data">
+                            <div class="input-wrapper">
+                                <label for="title">Título</label>
+                                <input type="text" name="title" id="title" placeholder="Digite aqui o título do livro a ser adicionado." value="{{livro.title}}" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="author">Autor</label>
+                                <input type="text" name="author" id="author" placeholder="Insira aqui o nome do autor do livro." value="{{livro.author}}" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="gender">Gênero</label>
+                                <input type="text" name="gender" id="gender" placeholder="Ex: Romance." value="{{livro.gender}}" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="date">Data de Publicação</label>
+                                <input class="data-livros" type="date" name="date" id="date" placeholder="xx/xx/xxxx" value="{{livro.pub_date}}" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="price">Preço</label>
+                                <input type="text" name="price" id="price" placeholder="R$ 00,00." value="{{livro.price}}" required>
+                            </div>
+                            <div class="textarea-branco">
+                                <div class="input-wrapper upload-btn">
+                                    <label for="foto-livro" style="margin-bottom: 0px;">Modificar capa do livro</label>
+                                    <input type="file" id="myfile" name="myfile" required>
+                                </div>
+                            </div>
+                            <!-- DISPONÍVEL / REGISTRADO -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="available" name="available">
+                                <label class="custom-control-label" for="available">Disponível em estoque?</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck2" name="linked" onclick="show();">
+                                <label class="custom-control-label" for="customCheck2">Registrar em sede?</label>
+                            </div>
+                            <!-- Lista de Sedes -->
+                            <div id="lista-sedes">
+                                <select class="custom-select">
+                                    <option selected value="0">Sede A</option>
+                                    <option value="1">Sede B</option>
+                                    <option value="2">Sede C</option>
+                                  </select>
+                            </div>
+                            <br>
+                            <input class="btn-primary" type="submit" value="Adicionar novo livro"> 
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </main>
+        <!-- FUNÇÃO PARA MOSTRAR O DROPDOWN DAS SEDES -->
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#customCheck2").click(function(){
+                  $("#lista-sedes").toggle();
+                });
+              });
+        </script>
+
+{% endblock %}

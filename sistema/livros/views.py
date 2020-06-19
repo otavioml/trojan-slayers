@@ -52,7 +52,7 @@ def adicionar_livro():
             price = price + ',00'
         if ',' not in price:
             price = price + ',00'
-        
+
         # Limpando espaço duplo
         price = price.replace("  ", " ")
 
@@ -64,8 +64,8 @@ def adicionar_livro():
             return redirect('/livros/adicionar-livro/')
         else:
             filename = secure_filename(image.filename)
-            image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
-            livro = Livro(titulo, genero, autor, price, date, available, image.filename)
+            image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
+            livro = Livro(titulo, genero, autor, price, date, available, filename)
             db.session.add(livro)
             db.session.commit()
             return redirect('/livros/')
@@ -73,6 +73,70 @@ def adicionar_livro():
         return redirect(url_for('livros.index'))
 
     return render_template('adicionar-livro.html')
+
+
+@livros.route('/editar_livro/<_id>', methods=['GET', 'POST'])
+def editar_livro(_id):
+
+    livro = Livro.query.get_or_404(_id)
+
+    if request.method == 'POST':
+        title = request.form['title']
+        author = request.form['author']
+        gender = request.form['gender']
+        date = request.form['date']
+        price = request.form['price']
+        # É necessário converter as checkboxes em booleans, porque elas retornam strings.
+        available = False
+        if request.form['available'] == 'on':
+            available = True
+        # Método para converter o "price" para o modelo "R$ XX,XX"
+        price.strip()
+        price = price.replace(".", ",")
+        price = price.replace("r", "R")
+        if price.startswith('R$') and not price.startswith('R$ '):
+            price = price.replace('R$', 'R$ ')
+        if price.startswith('R$') and ',' not in price:
+            price = price + ',00'
+        if not price.startswith('R$'):
+            if price.startswith(' '):
+                price = "R$" + price
+            else:
+                price = "R$ " + price
+        if not price.startswith('R$') and ',' not in price:
+            if price.startswith(' '):
+                price = "R$" + price
+            else:
+                price = "R$ " + price
+            price = price + ',00'
+        if ',' not in price:
+            price = price + ',00'
+
+        # Limpando espaço duplo
+        price = price.replace("  ", " ")
+
+        image = request.files['myfile']
+
+        if not allowed_image(image.filename):
+            print("That image is not allowed")
+            return redirect(url_for('livros.editar_livro', _id=livro.id))
+        else:
+            filename = secure_filename(image.filename)
+            image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
+
+            livro.title = title
+            livro.author = author
+            livro.gender = gender
+            livro.pub_date = date
+            livro.price = price
+            livro.available = available
+            livro.cover = filename
+
+            db.session.commit()
+
+            return redirect(url_for('livros.livro_esp', _id=livro.id))
+
+    return render_template('editar_livro.html', livro=livro)
 
 
 @livros.route('/excluir_livro/<_id>', methods=['GET', 'POST'])
