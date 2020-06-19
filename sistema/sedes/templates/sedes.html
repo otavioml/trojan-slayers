@@ -27,7 +27,7 @@
                 <p>{{sede.address}}</p>
                 <p>{{sede.contact}}</p>
                 <div class="editar-excluir-sedes">
-                    <button type="button" class="btn btn-primary"><a href="sede_esp.html">Editar</a></button></a>
+                    <button type="button" class="btn btn-primary"><a href="{{url_for('sedes.editar_sede', _id=sede.id)}}">Editar</a></button></a>
                     <button type="button" class="btn btn-primary excluir-sedes"><a href="{{url_for('sedes.excluir_sede', _id=sede.id)}}">Excluir</a></button>
                 </div>
             </div>
