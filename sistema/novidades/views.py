@@ -32,6 +32,26 @@ def adicionar_novidade():
     return render_template('adicionar-novidade.html')
 
 
+@novidades.route('/editar_novidade/<_id>', methods=['GET', 'POST'])
+def editar_novidade(_id):
+    novidade = Novidade.query.get_or_404(_id)
+
+    if request.method == 'POST':
+        title = request.form['title']
+        content = request.form['mensagem']
+        author = request.form['nome']
+
+        novidade.title = title
+        novidade.content = content
+        novidade.author = author
+
+        db.session.commit()
+
+        return redirect(url_for('novidades.index'))
+
+    return render_template('editar_novidade.html', novidade=novidade)
+
+
 @novidades.route('/excluir_novidade/<_id>', methods=['GET', 'POST'])
 def excluir_novidade(_id):
     novidade = Novidade.query.get_or_404(_id)

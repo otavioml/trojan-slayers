@@ -20,7 +20,7 @@
                 <div class="nome-data-novidade">
                     <p><strong>{{novidade.author}}, {{novidade.pub_date}}</strong></p>
                     
-                    <a href="#" class="button-link"><button type="button" class="btn btn-primary">Editar</button></a>
+                    <a href="{{url_for('novidades.editar_novidade', _id=novidade.id)}}" class="button-link"><button type="button" class="btn btn-primary">Editar</button></a>
                     <a href="{{url_for('novidades.excluir_novidade', _id=novidade.id)}}" class="button-link"><button type="button" class="btn btn-primary">Excluir</button></a>
                     
                 </div>
