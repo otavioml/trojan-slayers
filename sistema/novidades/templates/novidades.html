@@ -13,6 +13,9 @@
             <br>
             <br>
         <div class="col-sm-12" style="padding-left: 0px;">
+            {% if not novidades_front %}
+            <h3>Ainda não há novidades adicionadas.</h3>
+            {% endif %}
             {% for novidade in novidades_front %}
             <div class="novidade">
                 <h4>{{novidade.title}}</h4>

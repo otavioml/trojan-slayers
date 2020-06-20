@@ -29,7 +29,7 @@ def adicionar_livro():
         price = request.form['price']
         # É necessário converter as checkboxes em booleans, porque elas retornam strings.
         available = False
-        if request.form['available'] == 'on':
+        if request.form.get('available')== 'on':
             available = True
         # Método para converter o "price" para o modelo "R$ XX,XX"
         price.strip()
@@ -62,9 +62,14 @@ def adicionar_livro():
         if not allowed_image(image.filename):
             print("That image is not allowed")
             return redirect('/livros/adicionar-livro/')
-        else:
+        elif image:
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
+            livro = Livro(titulo, genero, autor, price, date, available, filename)
+            db.session.add(livro)
+            db.session.commit()
+            return redirect('/livros/')
+        else:
             livro = Livro(titulo, genero, autor, price, date, available, filename)
             db.session.add(livro)
             db.session.commit()
@@ -88,7 +93,7 @@ def editar_livro(_id):
         price = request.form['price']
         # É necessário converter as checkboxes em booleans, porque elas retornam strings.
         available = False
-        if request.form['available'] == 'on':
+        if request.form.get('available') == 'on':
             available = True
         # Método para converter o "price" para o modelo "R$ XX,XX"
         price.strip()
@@ -117,10 +122,10 @@ def editar_livro(_id):
 
         image = request.files['myfile']
 
-        if not allowed_image(image.filename):
+        if not allowed_image(image.filename) and image:
             print("That image is not allowed")
             return redirect(url_for('livros.editar_livro', _id=livro.id))
-        else:
+        elif image:
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
 
@@ -134,6 +139,16 @@ def editar_livro(_id):
 
             db.session.commit()
 
+            return redirect(url_for('livros.livro_esp', _id=livro.id))
+        else:
+            livro.title = title
+            livro.author = author
+            livro.gender = gender
+            livro.pub_date = date
+            livro.price = price
+            livro.available = available
+
+            db.session.commit()
             return redirect(url_for('livros.livro_esp', _id=livro.id))
 
     return render_template('editar_livro.html', livro=livro)

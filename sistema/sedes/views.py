@@ -58,10 +58,10 @@ def editar_sede(_id):
         # PROCESSAMENTO DE IMAGEM
         image = request.files['myfile']
 
-        if not allowed_image(image.filename):
+        if not allowed_image(image.filename) and image:
             print("That image is not allowed")
-            return redirect(url_for('sedes.editar_sede'))
-        else:
+            return redirect(url_for('sedes.editar_sede', _id = _id))
+        elif image:
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
 
@@ -69,6 +69,15 @@ def editar_sede(_id):
             sede.address = address
             sede.contact = contact
             sede.picture = filename
+
+            db.session.commit()
+
+            return redirect(url_for('sedes.sede_especifica', _id=sede.id))
+        
+        else:
+            sede.name = name
+            sede.address = address
+            sede.contact = contact
 
             db.session.commit()
 
