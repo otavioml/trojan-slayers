@@ -12,56 +12,27 @@
             </div>
 
             <div class="row" style="justify-content: center;">
-                <div class="col-sm-3 smaller-padding">
-                    <a class="no-dec" href="/livros/livro_esp/">
-                        <div class="card">  
-                            <div class="card-body">
-                                <div class="card-titulo">
-                                    <p class="card-text">O Mundo de Sofia</p>
-                                </div>
-                                <div class="card-autor">
-                                    <p class="card-desc">Romance - Jostein Gaarder</p>
-                                </div>
-                            </div>
-                            <img src="static/images/O-Mundo-de-Sofia2.jpg">
-                            <div class="card-body">
-                                <p class="card-text">R$ 30,90</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-3 smaller-padding">
+                {% if not livros %}
+                <h2>Ainda não há livros registrados</h2>
+                {% endif %}
+                {% for livro in livros[:2] %}
+                <div class="col-sm-3 smaller-padding cards-livros-mobile">
                     <div class="card">  
                         <div class="card-body">
                             <div class="card-titulo">
-                                <p class="card-text">A Culpa é das Estrelas</p>
+                                <a class="no-dec" href="/livros/livro-esp/{{livro.id}}"><p class="card-text">{{livro.title}}</p></a>
                             </div>
                             <div class="card-autor">
-                                <p class="card-desc">Sick Lit - John Green</p>
+                                <p class="card-desc">{{livro.gender}} - {{livro.author}}</p>
                             </div>
                         </div>
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/61ho40YQCkL.jpg">
+                        <img src="../../static/images/{{livro.cover}}">
                         <div class="card-body">
-                            <p class="card-text">R$ 22,90</p>
+                            <p class="card-text">{{livro.price}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-3 smaller-padding">
-                    <div class="card">  
-                        <div class="card-body">
-                            <div class="card-titulo">
-                                <p class="card-text">Extraordinário</p>
-                            </div>
-                            <div class="card-autor">
-                                <p class="card-desc">Sick Lit - John Green</p>
-                            </div>
-                        </div>
-                        <img src="https://images.livrariasaraiva.com.br/imagemnet/imagem.aspx/?pro_id=4663423&qld=90&l=830&a=-1=1007943217">
-                        <div class="card-body">
-                            <p class="card-text">R$ 39,90</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <div class="row" style="justify-content: center;">
                 <h1 class="hometitle hometitle-mobile" style="padding-top: 30px;">
@@ -69,39 +40,24 @@
                 </h1>
             </div>
             <div>
+                {% if not sedes_front %}
+                    <div class="row" style="justify-content: center;">
+                        <h2>Ainda não há sedes registradas</h2>
+                    </div>
+                {% endif %}
+                {% for sede in sedes_front[:2] %}
                 <div class="sede-mobile">
-                    <a class="nome-sedes" href="/sedes/sede_esp/">
-                        <h3>Sede Shopping da Ilha</h3>
+                    <a class="nome-sedes" href="/sedes/sede-especifica/{{sede.id}}">
+                        <h3>{{sede.name}}</h3>
                     </a>
-                    <p>AV Daniel Dela Touche, Bequimão Shopping da Ilha, São Luis -MA</p>
-                    <p>(98) 3014-1434</p>
+                    <p>{{sede.address}}</p>
+                    <p>{{sede.contact}}</p>
                     <div class="editar-excluir-sedes">
-                        <button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a>
-                        <button type="button" class="btn btn-primary excluir-sedes"><a href="#">Excluir</a></button>
+                        <button type="button" class="btn btn-primary"><a href="{{url_for('sedes.editar_sede', _id=sede.id)}}">Editar</a></button></a>
+                        <button type="button" class="btn btn-primary excluir-sedes"><a href="{{url_for('sedes.excluir_sede', _id=sede.id)}}">Excluir</a></button>
                     </div>
                 </div>
-                <div class="sede-mobile">
-                    <a class="nome-sedes" href="#">
-                        <h3>Sede nome Exemplo</h3>
-                    </a>
-                    <p>Endereço da Sede Exemplo</p>
-                    <p>(00) 0000-0000</p>
-                    <div class="editar-excluir-sedes">
-                        <button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a>
-                        <button type="button" class="btn btn-primary excluir-sedes"><a href="#">Excluir</a></button>
-                    </div>
-                </div>
-                <div class="sede-mobile sede-final">
-                    <a class="nome-sedes" href="#">
-                        <h3>Sede nome Exemplo</h3>
-                    </a>
-                    <p>Endereço da Sede Exemplo</p>
-                    <p>(00) 0000-0000</p>
-                    <div class="editar-excluir-sedes">
-                        <button type="button" class="btn btn-primary"><a href="#">Editar</a></button></a>
-                        <button type="button" class="btn btn-primary excluir-sedes"><a href="#">Excluir</a></button>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
 

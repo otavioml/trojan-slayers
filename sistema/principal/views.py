@@ -1,11 +1,15 @@
 from flask import Blueprint, render_template
+from sistema.livros.models import Livro
+from sistema.sedes.models import Sede
 
 
 principal = Blueprint('principal', __name__)
 
 @principal.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    sedes = Sede.query.order_by(Sede.id.desc()).all()
+    livros = Livro.query.order_by(Livro.id.desc()).all()
+    return render_template('index.html', livros=livros, sedes_front=sedes)
 
 @principal.route('/contato/')
 def contato():
