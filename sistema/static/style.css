@@ -221,6 +221,7 @@ form input, form textarea {
 
 .capa-livro img {
     border: 2px solid white;
+    margin-bottom: 40px; 
 }
 
 .button-link, button a, .navbar a {
