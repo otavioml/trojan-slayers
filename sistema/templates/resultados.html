@@ -20,15 +20,15 @@ Resultados da pesquisa
                 <div class="card">  
                     <div class="card-body">
                         <div class="card-titulo">
-                            <a class="no-dec" href="{{url_for('livros.livro_esp', _id=livro.id)}}"><p class="card-text">Título</p></a>
+                            <a class="no-dec" href="{{url_for('livros.livro_esp', _id=livro.id)}}"><p class="card-text">{{livro.title}}</p></a>
                         </div>
                         <div class="card-autor">
-                            <p class="card-desc">Gênero - Autor</p>
+                            <p class="card-desc">{{livro.gender}} - {{livro.author}}</p>
                         </div>
                     </div>
-                    <img src="{{url_for('static', filename='images/' + 'capa belafera.jpg')}}">
+                    <img src="{{url_for('static', filename='images/' + livro.cover)}}">
                     <div class="card-body">
-                        <p class="card-text">Preço</p>
+                        <p class="card-text">{{livro.price}}</p>
                     </div>
                 </div>
             </div>
@@ -47,10 +47,10 @@ Resultados da pesquisa
         {% for sede in sedes %}           
         <div class="sede-mobile" {% if sede == ultima_sede %} style="border-bottom: none;" {% endif %}>
             <a class="nome-sedes" href="{{url_for('sedes.sede_especifica', _id=sede.id)}}">
-                <h3>Sede de Exemplo</h3>
+                <h3>{{sede.name}}</h3>
             </a>
-            <p>Rua do Limoeiro, 42</p>
-            <p>(21) 2156-7889</p>
+            <p>{{sede.address}}</p>
+            <p>{{sede.contact}}</p>
             <div class="editar-excluir-sedes">
                 <button type="button" class="btn btn-primary"><a href="{{url_for('sedes.editar_sede', _id=sede.id)}}">Editar</a></button></a>
                 <button type="button" class="btn btn-primary excluir-sedes"><a href="{{url_for('sedes.excluir_sede', _id=sede.id)}}">Excluir</a></button>
