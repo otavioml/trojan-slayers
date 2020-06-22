@@ -10,7 +10,8 @@ sedes = Blueprint('sedes', __name__, template_folder="templates")
 @sedes.route('/')
 def index():
     sedes = Sede.query.order_by(Sede.id.desc()).all()
-    return render_template('sedes.html', sedes_front=sedes)
+    ultima_sede = Sede.query.order_by(Sede.id.asc()).first()
+    return render_template('sedes.html', ultima_sede = ultima_sede, sedes_front=sedes)
 
 
 @sedes.route('/adicionar-sede/', methods=['GET', 'POST'])
