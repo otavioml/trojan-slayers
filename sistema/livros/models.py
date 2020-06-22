@@ -1,5 +1,6 @@
 from sistema import db
 
+
 class Livro(db.Model):
     __tablename__ = 'livro'
     id = db.Column(db.Integer, primary_key=True)
@@ -22,6 +23,7 @@ class Livro(db.Model):
 
     def __repr__(self):
         return f'<Livro {self.title}>'
+
 
 class Disponibilidade(db.Model):
     __tablename__ = 'disponibilidade'

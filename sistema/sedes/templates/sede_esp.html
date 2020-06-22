@@ -13,7 +13,7 @@
                             <a href="{{url_for('sedes.excluir_sede', _id=sede.id)}}"><i class="fas fa-trash-alt" style="font-size: 30px;"></i></a>
                         </div>
                     <div class="article-img">
-                        <img class="rounded img-in-div" src="../../static/images/{{sede.picture}}" alt="Foto da Sede">
+                        <img class="rounded img-in-div" src="{{url_for('static', filename='images/' + sede.picture)}}" alt="Foto da Sede">
                     </div>
                 </div>
                 <div class="col-sm-6">

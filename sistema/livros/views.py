@@ -29,7 +29,7 @@ def adicionar_livro():
         price = request.form['price']
         # É necessário converter as checkboxes em booleans, porque elas retornam strings.
         available = False
-        if request.form.get('available')== 'on':
+        if request.form.get('available') == 'on':
             available = True
         # Método para converter o "price" para o modelo "R$ XX,XX"
         price.strip()
@@ -60,14 +60,14 @@ def adicionar_livro():
 
         if not allowed_image(image.filename):
             print("That image is not allowed")
-            return redirect('/livros/adicionar-livro/')
+            return redirect(url_for('livros.adicionar_livro'))
         else:
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
             livro = Livro(titulo, genero, autor, price, date, available, filename)
             db.session.add(livro)
             db.session.commit()
-            return redirect('/livros/')
+            return redirect(url_for('livros.index'))
 
     return render_template('adicionar-livro.html')
 

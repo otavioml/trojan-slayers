@@ -20,13 +20,13 @@
                     <div class="card">  
                         <div class="card-body">
                             <div class="card-titulo">
-                                <a class="no-dec" href="/livros/livro-esp/{{livro.id}}"><p class="card-text">{{livro.title}}</p></a>
+                                <a class="no-dec" href="{{url_for('livros.livro_esp', _id=livro.id)}}"><p class="card-text">{{livro.title}}</p></a>
                             </div>
                             <div class="card-autor">
                                 <p class="card-desc">{{livro.gender}} - {{livro.author}}</p>
                             </div>
                         </div>
-                        <img src="../../static/images/{{livro.cover}}">
+                        <img src="{{url_for('static', filename='images/' + livro.cover)}}">
                         <div class="card-body">
                             <p class="card-text">{{livro.price}}</p>
                         </div>
@@ -47,7 +47,7 @@
                 {% endif %}
                 {% for sede in sedes_front[:3] %}
                 <div class="sede-mobile">
-                    <a class="nome-sedes" href="/sedes/sede-especifica/{{sede.id}}">
+                    <a class="nome-sedes" href="{{url_for('sedes.sede_especifica', _id=sede.id)}}">
                         <h3>{{sede.name}}</h3>
                     </a>
                     <p>{{sede.address}}</p>

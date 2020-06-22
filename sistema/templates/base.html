@@ -11,7 +11,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Cormorant:wght@500&family=Gelasio&family=Montserrat:wght@300&family=Playfair+Display+SC&family=Playfair+Display:wght@500&family=Varela+Round&display=swap" rel="stylesheet"> 
-        <link rel="sortcut icon" href="../../static/images/logo_cleaner.png" type="image/x-icon">
+        <link rel="sortcut icon" href="{{url_for('static', filename='images/shortcut.png')}}" type="image/x-icon">
         <title>O Mundo de Sofia</title>
         {% block head %} {% endblock %}
     
@@ -25,18 +25,18 @@
             <div class="pc-header">
                 <div class="fixed-menu">
                     <nav>
-                    <a href="/  "><li class="nav-item">Home</li></a>
-                    <a href="/livros/"><li class="nav-item">Livros</li></a>
-                    <a href="/sedes/"><li class="nav-item">Sedes</li></a>
-                    <a href="/novidades/"><li class="nav-item">Novidades</li></a>
+                    <a href="{{url_for('principal.index')}}"><li class="nav-item">Home</li></a>
+                    <a href="{{url_for('livros.index')}}"><li class="nav-item">Livros</li></a>
+                    <a href="{{url_for('sedes.index')}}"><li class="nav-item">Sedes</li></a>
+                    <a href="{{url_for('novidades.index')}}"><li class="nav-item">Novidades</li></a>
                     <a href="/contato/"><li class="nav-item">Contato</li></a>
                     <a href="/sobre/"><li class="nav-item">Sobre</li></a>
                     </nav>
                 </div>
         
                 <div class="logo-top">
-                    <a href="/">
-                        <img src="../../static/images/logo_cleaner.png" alt="logomarca" height= "100px" width= "auto" id="logo">
+                    <a href="{{url_for('principal.index')}}">
+                        <img src="{{url_for('static', filename='images/logo_cleaner.png')}}" alt="logomarca" height= "100px" width= "auto" id="logo">
                     </a>
                 </div>
                 <div class="search-top">
@@ -48,8 +48,8 @@
             <div class="mobile-header">
                 <div class="fixed-menu">
                     <div class="logo-mobile">
-                        <a href="/">
-                            <img src="../../static/images/shortcut_white.png" alt="logo mobile" height="60px" width="auto" id="logo">
+                        <a href="{{url_for('principal.index')}}">
+                            <img src="{{url_for('static', filename='images/shortcut_white.png')}}" alt="logo mobile" height="60px" width="auto" id="logo">
                         </a>
                     </div>
                     <!-- BARRA DE PESQUISA -->
@@ -61,10 +61,10 @@
                         <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown"><i class="fas fa-align-justify"></i>
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Home</a></li>
-                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/livros/">Livros</a></li>
-                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/sedes/">Sedes</a></li>
-                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/novidades/">Novidades</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="{{url_for('principal.index')}}">Home</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="{{url_for('livros.index')}}">Livros</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="{{url_for('sedes.index')}}">Sedes</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="{{url_for('novidades.index')}}">Novidades</a></li>
                           <li role="presentation"><a role="menuitem" tabindex="-1" href="/contato/">Contato</a></li>
                           <li role="presentation"><a role="menuitem" tabindex="-1" href="/sobre/">Sobre</a></li>
                         </ul>

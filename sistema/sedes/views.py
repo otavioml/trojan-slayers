@@ -25,14 +25,14 @@ def adicionar_sede():
 
         if not allowed_image(image.filename):
             print("That image is not allowed")
-            return redirect('/sedes/adicionar-sede/')
+            return redirect(url_for('sedes.adicionar_sede'))
         else:
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
             new_sede = Sede(sede_name, sede_address, sede_phone, filename)
             db.session.add(new_sede)
             db.session.commit()
-            return redirect('/sedes/')
+            return redirect(url_for('sedes.index'))
 
     else:
         return render_template('adicionar-sede.html')

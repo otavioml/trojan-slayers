@@ -8,7 +8,7 @@
             <!--Duas div, a primeira contendo a imagem do livro, a segunda informações-->
             <div class="row">
                 <div class="col-sm-6 capa-livro">
-                    <img src="../../static/images/{{livro.cover}}" alt="" height="400px" class="rounded img-in-div">
+                    <img src="{{url_for('static', filename='images/' + livro.cover)}}" alt="" height="400px" class="rounded img-in-div">
                 </div>
                 <div class="livro-info col-sm-6">
                     <table  class="tabela-livro-esp" class="livro-especifico-tabela-mobile">
