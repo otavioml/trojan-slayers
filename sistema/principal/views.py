@@ -43,9 +43,9 @@ def pesquisa():
 
     pesquisa = request.form['pesquisa']
 
-    livros_pesquisados = Livro.query.filter(Livro.title.contains(str(pesquisa).strip().title())).all()
-    sedes_pesquisadas = Sede.query.filter(Sede.name.contains(str(pesquisa).strip().title())).all()
-    novidades_pesquisadas = Novidade.query.filter(Novidade.title.contains(str(pesquisa).strip().title())).all()
+    livros_pesquisados = Livro.query.filter(Livro.title.contains(str(pesquisa).strip().title())).all() + Livro.query.filter(Livro.author.contains(str(pesquisa).strip().title())).all()
+    sedes_pesquisadas = Sede.query.filter(Sede.name.contains(str(pesquisa).strip().title())).all() + Sede.query.filter(Sede.address.contains(str(pesquisa).strip().title())).all()
+    novidades_pesquisadas = Novidade.query.filter(Novidade.title.contains(str(pesquisa).strip().title())).all() + Novidade.query.filter(Novidade.author.contains(str(pesquisa).strip().title())).all() + Novidade.query.filter(Novidade.content.contains(str(pesquisa).strip().title())).all()
     # ÚLTIMA SEDE PARA RETIRAR A LINHA
     if sedes_pesquisadas:
         ultima_sede = sedes_pesquisadas[len(sedes_pesquisadas)-1]
