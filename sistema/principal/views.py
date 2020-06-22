@@ -27,21 +27,29 @@ def contato():
 def sobre():
     return render_template('sobre.html')
 
-@principal.route('/pesquisa/')
-def pesquisa():
+
+## ROTA DE TESTE
+@principal.route('/pesquisateste/')
+def pesquisateste():
     result_livros = Livro.query.order_by(Livro.id.desc()).all()
     result_sedes = Sede.query.order_by(Sede.id.desc()).all()
     result_novidades = Novidade.query.order_by(Novidade.pub_date.desc()).all()
+    # ÚLTIMA SEDE PARA RETIRAR A LINHA
     ultima_sede = Sede.query.order_by(Sede.id.asc()).first()
-    return render_template('resultados.html', ultima_sede = ultima_sede, result_livros = result_livros, result_sedes = result_sedes, result_novidades = result_novidades)
+    return render_template('resultados.html', ultima_sede = ultima_sede, livros = result_livros, sedes = result_sedes, novidades = result_novidades)
 
 @principal.route('/resultados/', methods=['GET', 'POST'])
 def pesquisa():
 
     pesquisa = request.form['pesquisa']
 
-    livros_pesquisados = Livro.query.filter(Livro.title.contains(str(pesquisa)))
-    sedes_pesquisadas = Sede.query.filter(Sede.name.contains(str(pesquisa)))
-    novidades_pesquisadas = Novidade.query.filter(Novidade.title.contains(str(pesquisa)))
+    livros_pesquisados = Livro.query.filter(Livro.title.contains(str(pesquisa))).all()
+    sedes_pesquisadas = Sede.query.filter(Sede.name.contains(str(pesquisa))).all()
+    novidades_pesquisadas = Novidade.query.filter(Novidade.title.contains(str(pesquisa))).all()
+    # ÚLTIMA SEDE PARA RETIRAR A LINHA
+    if sedes_pesquisadas:
+        ultima_sede = sedes_pesquisadas[len(sedes_pesquisadas)-1]
+    else:
+        ultima_sede = None
 
-    return render_template('resultados.html', livros=livros_pesquisados, sedes=sedes_pesquisadas, novidades=novidades_pesquisadas)
+    return render_template('resultados.html', ultima_sede = ultima_sede, livros=livros_pesquisados, sedes=sedes_pesquisadas, novidades=novidades_pesquisadas)
