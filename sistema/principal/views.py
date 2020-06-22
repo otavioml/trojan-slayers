@@ -43,9 +43,41 @@ def pesquisa():
 
     pesquisa = request.form['pesquisa']
 
-    livros_pesquisados = Livro.query.filter(Livro.title.contains(str(pesquisa).strip().title())).all() + Livro.query.filter(Livro.author.contains(str(pesquisa).strip().title())).all()
-    sedes_pesquisadas = Sede.query.filter(Sede.name.contains(str(pesquisa).strip().title())).all() + Sede.query.filter(Sede.address.contains(str(pesquisa).strip().title())).all()
-    novidades_pesquisadas = Novidade.query.filter(Novidade.title.contains(str(pesquisa).strip().title())).all() + Novidade.query.filter(Novidade.author.contains(str(pesquisa).strip().title())).all() + Novidade.query.filter(Novidade.content.contains(str(pesquisa).strip().title())).all()
+    #resultados de livros pesquisados
+    search_livros_title = Livro.query.filter(Livro.title.contains(str(pesquisa).strip().title())).all()
+    search_livros_author = Livro.query.filter(Livro.author.contains(str(pesquisa).strip().title())).all()
+    titulo_l = set(search_livros_title)
+    autor_l = set(search_livros_title)
+    interc_l = autor_l - titulo_l
+    livros_pesquisados =  list(interc_l) + search_livros_title
+
+    #resultados de sedes pesquisados
+    search_sedes_nome = Sede.query.filter(Sede.name.contains(str(pesquisa).strip().title())).all()
+    search_sede_endereco = Sede.query.filter(Sede.address.contains(str(pesquisa).strip().title())).all()
+    nome_s = set(search_sedes_nome)
+    endereco_s = set(search_sede_endereco)
+    interc_s = endereco_s - nome_s
+    sedes_pesquisadas =  list(interc_s) + search_sedes_nome
+
+    #resultados de sedes pesquisados
+    search_sedes_nome = Sede.query.filter(Sede.name.contains(str(pesquisa).strip().title())).all()
+    search_sede_endereco = Sede.query.filter(Sede.address.contains(str(pesquisa).strip().title())).all()
+    nome_s = set(search_sedes_nome)
+    endereco_s = set(search_sede_endereco)
+    interc_s = endereco_s - nome_s
+    sedes_pesquisadas =  list(interc_s) + search_sedes_nome
+
+    #resultados de novidades pesquisadas
+    search_novidades_titulo = Novidade.query.filter(Novidade.title.contains(str(pesquisa).strip().title())).all() 
+    search_novidades_autor = Novidade.query.filter(Novidade.author.contains(str(pesquisa).strip().title())).all()
+    search_novidades_texto = Novidade.query.filter(Novidade.content.contains(str(pesquisa).strip().title())).all()
+    titulo_n = set(search_novidades_titulo)
+    autor_n = set(search_novidades_autor)
+    texto_n = set(search_novidades_texto)
+
+    interc_n = (texto_n - autor_n) - titulo_n
+    novidades_pesquisadas =  list(interc_n) + search_novidades_titulo
+
     # ÚLTIMA SEDE PARA RETIRAR A LINHA
     if sedes_pesquisadas:
         ultima_sede = sedes_pesquisadas[len(sedes_pesquisadas)-1]
