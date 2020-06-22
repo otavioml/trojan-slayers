@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request
 from sistema.livros.models import Livro
 from sistema.sedes.models import Sede
+from sistema.novidades.models import Novidade
 from sistema.livros.views import Livro
 from sistema.sedes.views import Sede
 from sistema.novidades.views import Novidade
@@ -13,7 +14,8 @@ principal = Blueprint('principal', __name__)
 def index():
     sedes = Sede.query.order_by(Sede.id.desc()).all()
     livros = Livro.query.order_by(Livro.id.desc()).all()
-    return render_template('index.html', livros=livros, sedes_front=sedes)
+    ultima_sede = Sede.query.order_by(Sede.id.asc()).first()
+    return render_template('index.html',  ultima_sede = ultima_sede, livros=livros, sedes_front=sedes)
 
 
 @principal.route('/contato/')
@@ -25,6 +27,13 @@ def contato():
 def sobre():
     return render_template('sobre.html')
 
+@principal.route('/pesquisa/')
+def pesquisa():
+    result_livros = Livro.query.order_by(Livro.id.desc()).all()
+    result_sedes = Sede.query.order_by(Sede.id.desc()).all()
+    result_novidades = Novidade.query.order_by(Novidade.pub_date.desc()).all()
+    ultima_sede = Sede.query.order_by(Sede.id.asc()).first()
+    return render_template('resultados.html', ultima_sede = ultima_sede, result_livros = result_livros, result_sedes = result_sedes, result_novidades = result_novidades)
 
 @principal.route('/resultados/', methods=['GET', 'POST'])
 def pesquisa():
