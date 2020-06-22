@@ -57,25 +57,17 @@ def adicionar_livro():
         price = price.replace("  ", " ")
 
         image = request.files['myfile']
-        picture = image.filename
 
         if not allowed_image(image.filename):
             print("That image is not allowed")
             return redirect('/livros/adicionar-livro/')
-        elif image:
+        else:
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
             livro = Livro(titulo, genero, autor, price, date, available, filename)
             db.session.add(livro)
             db.session.commit()
             return redirect('/livros/')
-        else:
-            livro = Livro(titulo, genero, autor, price, date, available, filename)
-            db.session.add(livro)
-            db.session.commit()
-            return redirect('/livros/')
-
-        return redirect(url_for('livros.index'))
 
     return render_template('adicionar-livro.html')
 
