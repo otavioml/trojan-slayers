@@ -19,6 +19,7 @@ def adicionar_sede():
         sede_name = request.form['sede-name']
         sede_phone = request.form['contact']
         sede_address = request.form['address']
+        sede_schedule = request.form['schedule']
 
         # PROCESSAMENTO DE IMAGEM
         image = request.files['myfile']
@@ -29,7 +30,7 @@ def adicionar_sede():
         else:
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
-            new_sede = Sede(sede_name, sede_address, sede_phone, filename)
+            new_sede = Sede(sede_name, sede_address, sede_phone, sede_schedule, filename)
             db.session.add(new_sede)
             db.session.commit()
             return redirect(url_for('sedes.index'))
@@ -54,6 +55,7 @@ def editar_sede(_id):
         name = request.form['sede-name']
         address = request.form['address']
         contact = request.form['contact']
+        schedule = request.form['schedule']
 
         # PROCESSAMENTO DE IMAGEM
         image = request.files['myfile']
@@ -68,6 +70,7 @@ def editar_sede(_id):
             sede.name = name
             sede.address = address
             sede.contact = contact
+            sede.schedule = schedule
             sede.picture = filename
 
             db.session.commit()
@@ -77,6 +80,7 @@ def editar_sede(_id):
         else:
             sede.name = name
             sede.address = address
+            sede.schedule = schedule
             sede.contact = contact
 
             db.session.commit()
