@@ -34,7 +34,7 @@
                             </div>
                             <!-- DISPONÍVEL / REGISTRADO -->
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="available" name="available">
+                                <input type="checkbox" class="custom-control-input" id="available" name="available" {%if livro.available%}checked{%endif%}>
                                 <label class="custom-control-label" for="available">Disponível em estoque?</label>
                             </div>
                             <div class="custom-control custom-checkbox">
