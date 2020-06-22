@@ -29,8 +29,8 @@
                     <a href="{{url_for('livros.index')}}"><li class="nav-item">Livros</li></a>
                     <a href="{{url_for('sedes.index')}}"><li class="nav-item">Sedes</li></a>
                     <a href="{{url_for('novidades.index')}}"><li class="nav-item">Novidades</li></a>
-                    <a href="/contato/"><li class="nav-item">Contato</li></a>
-                    <a href="/sobre/"><li class="nav-item">Sobre</li></a>
+                    <a href="{{url_for('principal.contato')}}"><li class="nav-item">Contato</li></a>
+                    <a href="{{url_for('principal.sobre')}}"><li class="nav-item">Sobre</li></a>
                     </nav>
                 </div>
         
@@ -39,8 +39,12 @@
                         <img src="{{url_for('static', filename='images/logo_cleaner.png')}}" alt="logomarca" height= "100px" width= "auto" id="logo">
                     </a>
                 </div>
+                <!-- BARRA DE PESQUISA -->
                 <div class="search-top">
-                    <input type="text" placeholder="Pesquisar">
+                    <form action="{{url_for('principal.pesquisa')}}" method="POST">
+                        <input type="text" name="pesquisa" placeholder="Pesquisar" style="height: 30px;">
+                        <input type="submit" style="display: none;">
+                    </form>
                 </div>
                 <div class="filler"></div>
             </div>
@@ -52,9 +56,12 @@
                             <img src="{{url_for('static', filename='images/shortcut_white.png')}}" alt="logo mobile" height="60px" width="auto" id="logo">
                         </a>
                     </div>
-                    <!-- BARRA DE PESQUISA -->
+                    <!-- BARRA DE PESQUISA MOBILE -->
                     <div class="pesquisa-mobile">
-                        <input type="text" placeholder="Pesquisar">
+                        <form action="{{url_for('principal.pesquisa')}}" method="POST">
+                            <input type="text" name="pesquisa" placeholder="Pesquisar" style="height: 30px;">
+                            <input type="submit" style="display: none;">
+                        </form>
                     </div>
                     <!-- DROPDOWN -->
                     <div class="dropdown drop-mobile">
@@ -65,8 +72,8 @@
                           <li role="presentation"><a role="menuitem" tabindex="-1" href="{{url_for('livros.index')}}">Livros</a></li>
                           <li role="presentation"><a role="menuitem" tabindex="-1" href="{{url_for('sedes.index')}}">Sedes</a></li>
                           <li role="presentation"><a role="menuitem" tabindex="-1" href="{{url_for('novidades.index')}}">Novidades</a></li>
-                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/contato/">Contato</a></li>
-                          <li role="presentation"><a role="menuitem" tabindex="-1" href="/sobre/">Sobre</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="{{url_for('principal.contato')}}">Contato</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="{{url_for('principal.sobre')}}">Sobre</a></li>
                         </ul>
                     </div>
                 </div>

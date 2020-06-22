@@ -1,7 +1,10 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from sistema.livros.models import Livro
 from sistema.sedes.models import Sede
 from sistema.novidades.models import Novidade
+from sistema.livros.views import Livro
+from sistema.sedes.views import Sede
+from sistema.novidades.views import Novidade
 
 
 principal = Blueprint('principal', __name__)
@@ -31,3 +34,14 @@ def pesquisa():
     result_novidades = Novidade.query.order_by(Novidade.pub_date.desc()).all()
     ultima_sede = Sede.query.order_by(Sede.id.asc()).first()
     return render_template('resultados.html', ultima_sede = ultima_sede, result_livros = result_livros, result_sedes = result_sedes, result_novidades = result_novidades)
+
+@principal.route('/resultados/', methods=['GET', 'POST'])
+def pesquisa():
+
+    pesquisa = request.form['pesquisa']
+
+    livros_pesquisados = Livro.query.filter(Livro.title.contains(str(pesquisa)))
+    sedes_pesquisadas = Sede.query.filter(Sede.name.contains(str(pesquisa)))
+    novidades_pesquisadas = Novidade.query.filter(Novidade.title.contains(str(pesquisa)))
+
+    return render_template('resultados.html', livros=livros_pesquisados, sedes=sedes_pesquisadas, novidades=novidades_pesquisadas)
