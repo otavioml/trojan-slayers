@@ -1,6 +1,9 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from sistema.livros.models import Livro
 from sistema.sedes.models import Sede
+from sistema.livros.views import Livro
+from sistema.sedes.views import Sede
+from sistema.novidades.views import Novidade
 
 
 principal = Blueprint('principal', __name__)
@@ -21,3 +24,15 @@ def contato():
 @principal.route('/sobre/')
 def sobre():
     return render_template('sobre.html')
+
+
+@principal.route('/resultados/', methods=['GET', 'POST'])
+def pesquisa():
+
+    pesquisa = request.form['pesquisa']
+
+    livros_pesquisados = Livro.query.filter(Livro.title.contains(str(pesquisa)))
+    sedes_pesquisadas = Sede.query.filter(Sede.name.contains(str(pesquisa)))
+    novidades_pesquisadas = Novidade.query.filter(Novidade.title.contains(str(pesquisa)))
+
+    return render_template('resultados.html', livros=livros_pesquisados, sedes=sedes_pesquisadas, novidades=novidades_pesquisadas)
