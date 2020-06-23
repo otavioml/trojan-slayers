@@ -2,6 +2,7 @@ import os
 from flask import Blueprint, render_template, request, redirect, url_for
 from sistema import app, db, allowed_image
 from sistema.livros.models import Livro
+from sistema.sedes.models import Sede
 from werkzeug.utils import secure_filename
 
 livros = Blueprint('livros', __name__, template_folder="templates")
@@ -21,6 +22,7 @@ def livro_esp(_id):
 
 @livros.route('/adicionar-livro/', methods=['GET', 'POST'])
 def adicionar_livro():
+    sedes = Sede.query.order_by(Sede.id.asc()).all()
     if request.method == 'POST':
         titulo = request.form['title']
         genero = request.form['gender']
@@ -69,7 +71,7 @@ def adicionar_livro():
             db.session.commit()
             return redirect(url_for('livros.index'))
 
-    return render_template('adicionar-livro.html')
+    return render_template('adicionar-livro.html', sedes = sedes)
 
 
 @livros.route('/editar_livro/<_id>', methods=['GET', 'POST'])

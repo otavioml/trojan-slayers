@@ -700,6 +700,22 @@ input[type=checkbox] {
     }
 }
 
+#addSede, #delSede {
+    float:right; 
+    padding: 2px 5px 2px 1px; 
+    margin-bottom: 14px; 
+    font-size: 20px;
+    display: none;
+}
+
+#addSede {
+    padding-left: 5px;
+}
+
+.selectHidden {
+    display: none;
+}
+
 /* BOOTSTRAP OVERRIDE */
 
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {

@@ -38,17 +38,21 @@
                                 <label class="custom-control-label" for="available">Disponível em estoque?</label>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck2" name="linked" onclick="show();">
+                                <input type="checkbox" class="custom-control-input" id="customCheck2" name="linked">
                                 <label class="custom-control-label" for="customCheck2">Registrar em sede?</label>
                             </div>
                             <!-- Lista de Sedes -->
                             <div id="lista-sedes">
-                                <select class="custom-select">
-                                    <option selected value="0">Sede A</option>
-                                    <option value="1">Sede B</option>
-                                    <option value="2">Sede C</option>
-                                  </select>
+                                {% for sede in sedes %}
+                                <select id="select{{sede.id}}" class="custom-select {% if not sede == sedes[0]%}selectHidden{% endif %}" style="margin-bottom: 5px;">
+                                    {% for sede in sedes %}
+                                    <option value="{{sede.id}}">{{sede.name}}</option>
+                                    {% endfor %}
+                                </select>
+                                {% endfor %}
                             </div>
+                            <i onclick="addSelect()" class="fas fa-plus" id="addSede"></i>
+                            <i onclick="delSelect()" class="fas fa-minus" id="delSede"></i>
                             <br>
                             <input class="btn-primary" type="submit" value="Adicionar novo livro"> 
                         </form>
@@ -58,11 +62,45 @@
         </main>
         <!-- FUNÇÃO PARA MOSTRAR O DROPDOWN DAS SEDES -->
         <script type="text/javascript">
+            selectId = 2;
+            storedId = 0;
             $(document).ready(function(){
                 $("#customCheck2").click(function(){
                   $("#lista-sedes").toggle();
+                  document.getElementById("addSede").style.display = "block";
+                  
                 });
               });
+            function addSelect() {
+                if (selectId == 2) {
+                    document.getElementById("delSede").style.display = "block";
+                }
+                if (document.getElementById("select" + selectId) != null) {
+                    document.getElementById("select" + selectId).style.display = "block";
+                    selectId = selectId + 1;
+                    if (document.getElementById("select" + selectId) == null) {
+                        document.getElementById("addSede").style.display = "none";
+                        storedId = selectId;
+                    }
+                    if(selectId > 2) {
+                        document.getElementById("delSede").style.display = "block";
+                    }
+                }
+            }
+            function delSelect() {
+                document.getElementById("select" + (selectId - 1)).style.display = "none";
+                selectIdNext = selectId - 1;
+                if (document.getElementById("select" + selectIdNext) != null) {
+                    selectId = selectId - 1;
+                }
+                if(selectId <= 2) {
+                    document.getElementById("delSede").style.display = "none";
+                }
+                if(document.getElementById("addSede").style.display != "block" && selectId < storedId) {
+                    document.getElementById("addSede").style.display = "block";
+                }
+            }
+
         </script>
 
 {% endblock %}
