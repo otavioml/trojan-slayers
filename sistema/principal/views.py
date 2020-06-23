@@ -47,7 +47,7 @@ def pesquisa():
     search_livros_title = Livro.query.filter(Livro.title.contains(str(pesquisa).strip().title())).all()
     search_livros_author = Livro.query.filter(Livro.author.contains(str(pesquisa).strip().title())).all()
     titulo_l = set(search_livros_title)
-    autor_l = set(search_livros_title)
+    autor_l = set(search_livros_author)
     interc_l = autor_l - titulo_l
     livros_pesquisados =  list(interc_l) + search_livros_title
 
