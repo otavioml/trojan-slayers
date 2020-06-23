@@ -716,6 +716,11 @@ input[type=checkbox] {
     display: none;
 }
 
+.montserrat {
+    font-family: 'montserrat';
+    text-transform: uppercase;
+}
+
 /* BOOTSTRAP OVERRIDE */
 
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
