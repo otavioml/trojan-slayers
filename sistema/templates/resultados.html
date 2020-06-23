@@ -7,7 +7,8 @@ Resultados da pesquisa
 {% block body %}
 <div class="container results">
     <h2 style="text-align: center;">Resultados da pesquisa:</h2>
-    <h3>Livros</h3>
+    <br><br>
+    <h2>Livros</h2>
     <br>
     <!-- For com um card para cada livro -->
         {% if not livros %}
@@ -37,7 +38,10 @@ Resultados da pesquisa
 
 
         </div>
-    <h3>Sedes</h3>
+        
+    <!-- Tabela com uma row para cada sede -->
+    <br>
+    <h2>Sedes</h2>
     <div class="borderbottom">
         {% if not sedes %}
         <br>
@@ -58,11 +62,11 @@ Resultados da pesquisa
         </div>
         {% endfor %}
     </div>
-    <!-- Tabela com uma row para cada sede -->
 
-    <h3>Novidades</h3>
-    <br>
     <!-- Novidades -->
+    <br>
+    <h2>Novidades</h2>
+    <br>
     <div class="col-sm-12 borderbottom" style="padding-left: 0px;">
         {% if not novidades %}
         <h4>Não foram encontradas novidades para sua pesquisa.</h4>
