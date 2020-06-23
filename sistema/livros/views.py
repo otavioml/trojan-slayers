@@ -17,7 +17,8 @@ def index():
 @livros.route('/livro-esp/<_id>')
 def livro_esp(_id):
     livro = Livro.query.get_or_404(_id)
-    return render_template('livro_esp.html', livro=livro)
+    sede = Livro.query.all()
+    return render_template('livro_esp.html', livro=livro, sede=sede)
 
 
 @livros.route('/adicionar-livro/', methods=['GET', 'POST'])
