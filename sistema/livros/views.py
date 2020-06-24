@@ -80,7 +80,7 @@ def adicionar_livro():
             return redirect(url_for('livros.adicionar_livro'))
         else:
             filename = secure_filename(image.filename)
-            image.save(os.path.join(app.config["IMAGE_UPLOADS"], 'static', 'images', filename))
+            image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
             livro = Livro(titulo, genero, autor, price, date, available, filename)
             livro.sedes = sedes_associadas
             db.session.add(livro)
