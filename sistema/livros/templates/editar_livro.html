@@ -38,16 +38,19 @@
                                 <label class="custom-control-label" for="available">Disponível em estoque?</label>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck2" name="linked" onclick="show();">
+                                <input type="checkbox" class="custom-control-input" id="customCheck2" name="linked"  {% if livro.sedes != [] %}checked{% endif %} >
                                 <label class="custom-control-label" for="customCheck2">Registrar em sede?</label>
                             </div>
                             <!-- Lista de Sedes -->
-                            <div id="lista-sedes">
-                                <select class="custom-select">
-                                    <option selected value="0">Sede A</option>
-                                    <option value="1">Sede B</option>
-                                    <option value="2">Sede C</option>
-                                  </select>
+                            <div id="lista-sedes-edit">
+                                <div style="padding-left: 50px;">
+                                    {% for sede in sedes %}
+                                    <div class="custom-control custom-checkbox">
+                                        <input {% if sede in livro.sedes%} checked {% endif %} type="checkbox" class="custom-control-input" id="availableAt{{sede.id}}" name="availableAt{{sede.id}}">
+                                        <label class="custom-control-label" for="availableAt{{sede.id}}">{{sede.name}}</label>
+                                    </div>
+                                    {% endfor %}
+                                </div>
                             </div>
                             <br>
                             <input class="btn-primary" type="submit" value="Atualizar livro"> 
@@ -59,8 +62,18 @@
         <!-- FUNÇÃO PARA MOSTRAR O DROPDOWN DAS SEDES -->
         <script type="text/javascript">
             $(document).ready(function(){
+                if(document.getElementById("customCheck2").checked == true){
+                    document.getElementById("lista-sedes-edit").style.display = 'block';
+                } else {
+                    document.getElementById("lista-sedes-edit").style.display = 'none';
+                }
                 $("#customCheck2").click(function(){
-                  $("#lista-sedes").toggle();
+                    if(document.getElementById("customCheck2").checked == true){
+                        document.getElementById("lista-sedes-edit").style.display = 'block';
+                    } else {
+                        document.getElementById("lista-sedes-edit").style.display = 'none';
+                    }
+                    
                 });
               });
         </script>

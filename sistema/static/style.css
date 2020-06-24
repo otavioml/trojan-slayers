@@ -494,7 +494,7 @@ input[type=checkbox] {
     margin-bottom: 30px;
 }
 
-#lista-sedes {
+#lista-sedes, #lista-sedes-edit {
     display: none;
 }
 

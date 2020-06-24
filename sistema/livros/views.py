@@ -64,8 +64,9 @@ def adicionar_livro():
         sedes_associadas = []
         for sede in sedes:
             select = request.form.get('availableAt' + str(sede.id))
+            print(select)
             if select == "on":
-                sede_adicionada = Sede.query.get_or_404(select)
+                sede_adicionada = Sede.query.get_or_404(sede.id)
                 if sede_adicionada not in sedes_associadas:
                     sedes_associadas.append(sede_adicionada)
 
@@ -88,6 +89,7 @@ def adicionar_livro():
 def editar_livro(_id):
 
     livro = Livro.query.get_or_404(_id)
+    sedes = Sede.query.order_by(Sede.id.asc()).all()
 
     if request.method == 'POST':
         title = request.form['title']
@@ -126,6 +128,19 @@ def editar_livro(_id):
 
         image = request.files['myfile']
 
+        sedes_associadas = []
+        for sede in sedes:
+            select = request.form.get('availableAt' + str(sede.id))
+            if select == "on":
+                sede_adicionada = Sede.query.get_or_404(sede.id)
+                if sede_adicionada not in sedes_associadas:
+                    sedes_associadas.append(sede_adicionada)
+            else:
+                sede_adicionada = Sede.query.get_or_404(sede.id)
+                if sede_adicionada in sedes_associadas:
+                    sedes_associadas.remove(sede_adicionada)
+
+
         if not allowed_image(image.filename) and image:
             print("That image is not allowed")
             return redirect(url_for('livros.editar_livro', _id=livro.id))
@@ -140,6 +155,7 @@ def editar_livro(_id):
             livro.price = price
             livro.available = available
             livro.cover = filename
+            livro.sedes = sedes_associadas
 
             db.session.commit()
 
@@ -151,11 +167,12 @@ def editar_livro(_id):
             livro.pub_date = date
             livro.price = price
             livro.available = available
+            livro.sedes = sedes_associadas
 
             db.session.commit()
             return redirect(url_for('livros.livro_esp', _id=livro.id))
 
-    return render_template('editar_livro.html', livro=livro, sedes_associadas = livro.sedes)
+    return render_template('editar_livro.html', livro=livro, sedes=sedes)
 
 
 @livros.route('/excluir_livro/<_id>', methods=['GET', 'POST'])
