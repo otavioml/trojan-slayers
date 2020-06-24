@@ -13,7 +13,7 @@ app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['IMAGE_UPLOADS'] = os.path.dirname(__file__) + '\static\images'
+app.config['IMAGE_UPLOADS'] = os.path.dirname(__file__)
 app.config['ALLOWED_IMAGE_EXTENSIONS'] = ['PNG', 'JPG', 'JPEG']
 
 # PROCESSAMENTO DE IMAGENS
