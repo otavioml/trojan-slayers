@@ -11,32 +11,44 @@
                     <img src="{{url_for('static', filename='images/' + livro.cover)}}" alt="" height="400px" class="rounded img-in-div">
                 </div>
                 <div class="livro-info col-sm-6">
-                    <table  class="tabela-livro-esp" class="livro-especifico-tabela-mobile">
-                        <tr>
-                            <td><h4>TÍTULO</h4></td>
-                            <td><p>{{livro.title}}</p></td>
-                        </tr>
-                        <tr>
-                            <td><h4>AUTOR</h4></td>
-                            <td><p>{{livro.author}}</p></td>
-                        </tr>
-                        <tr>
-                            <td><h4>GÊNERO</h4></td>
-                            <td><p>{{livro.gender}}</p></td>
-                        </tr>
-                        <tr>
-                            <td><h4>PUBLICAÇÃO</h4></td>
-                            <td><p>{{livro.pub_date.replace('-', '/')}}</p></td>
-                        </tr>
-                        <tr>
-                            <td><h4>DISPONIBILIDADE</h4></td>
-                            <td><p>{% if livro.available %}Disponível{% endif %}{% if not livro.available%}Indisponível{% endif %}</p></td>
-                        </tr>
+                            <h2 class="montserrat mobile-center" style="margin-bottom: 20px;">{{livro.title}}</h2>
+
+                            <h4>AUTOR</h4>
+                            <p>{{livro.author}}</p>
+
+                            <h4>GÊNERO</h4>
+                            <p>{{livro.gender}}</p>
+
+                            <h4>PUBLICAÇÃO</h4></td>
+                            <p>{{livro.pub_date.replace('-', '/')}}</p>
+
+                            <h4>DISPONIBILIDADE</h4>
+                            <p>{% if livro.available %}Disponível{% endif %}{% if not livro.available%}Indisponível{% endif %}{% if livro.sedes != [] %}. Registrado em {% endif %}
+                                {% if livro_todas %}
+                                todas as sedes.
+                                {% else %}
+                                {% for sede in livro.sedes %}
+                                    {% if sede != livro.sedes[-1] and sede != livro.sedes[-2] %}
+                                    {{sede.name}}, 
+                                    {% endif %}
+                                    {% if sede != livro.sedes[-1] and sede == livro.sedes[-2] %}
+                                    {{sede.name}} 
+                                    {% endif %}
+                                    {% if sede == livro.sedes[-1] %}
+                                    e {{sede.name}}.
+                                    {% endif %}
+                                    {% if sede == livro.sedes[-1] and sede == livro.sedes[0] %}
+                                    {{sede.name}}.
+                                    {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                            </p>
+
                     </table>
                     <!--Botões excluir e editar-->
-                    <div>
+                    <div class="mobile-flex-center">
                         <a href="{{url_for('livros.editar_livro', _id=livro.id)}}"><button type="button" class="btn btn-primary">Editar</button></a>
-                        <a href="{{url_for('livros.excluir_livro', _id=livro.id)}}"><button type="button" class="btn btn-primary">Excluir</button></a>
+                        <a href="{{url_for('livros.excluir_livro', _id=livro.id)}}"><button type="button" class="mobile-pad-left btn btn-primary">Excluir</button></a>
                     </div>
                 </div>
             </div>

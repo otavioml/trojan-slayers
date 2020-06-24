@@ -17,8 +17,13 @@ def index():
 @livros.route('/livro-esp/<_id>')
 def livro_esp(_id):
     livro = Livro.query.get_or_404(_id)
-    sede = Livro.query.all()
-    return render_template('livro_esp.html', livro=livro, sede=sede)
+    len_sedes = len(Sede.query.order_by(Sede.id.desc()).all())
+    len_livro_sedes = len(livro.sedes)
+    if len_livro_sedes == len_sedes:
+        livro_todas = True
+    else:
+        livro_todas = False
+    return render_template('livro_esp.html', livro=livro, livro_todas = livro_todas)
 
 
 @livros.route('/adicionar-livro/', methods=['GET', 'POST'])

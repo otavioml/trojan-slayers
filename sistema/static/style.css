@@ -584,7 +584,20 @@ input[type=checkbox] {
 }
 
 @media (max-width: 768px) {
-    
+    .mobile-center {
+        text-align: center;
+    }
+
+    .mobile-flex-center {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .mobile-pad-left {
+        margin-left: 10px;
+    }
+
     .homepage .row {
         margin-right: 0;
         margin-left: 0;
