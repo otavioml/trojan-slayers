@@ -61,6 +61,14 @@ def adicionar_livro():
 
         image = request.files['myfile']
 
+        sedes_associadas = []
+        for sede in sedes:
+            select = request.form.get('availableAt' + str(sede.id))
+            if select == "on":
+                sede_adicionada = Sede.query.get_or_404(select)
+                if sede_adicionada not in sedes_associadas:
+                    sedes_associadas.append(sede_adicionada)
+
         if not allowed_image(image.filename):
             print("That image is not allowed")
             return redirect(url_for('livros.adicionar_livro'))
@@ -68,6 +76,7 @@ def adicionar_livro():
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
             livro = Livro(titulo, genero, autor, price, date, available, filename)
+            livro.sedes = sedes_associadas
             db.session.add(livro)
             db.session.commit()
             return redirect(url_for('livros.index'))
@@ -146,7 +155,7 @@ def editar_livro(_id):
             db.session.commit()
             return redirect(url_for('livros.livro_esp', _id=livro.id))
 
-    return render_template('editar_livro.html', livro=livro)
+    return render_template('editar_livro.html', livro=livro, sedes_associadas = livro.sedes)
 
 
 @livros.route('/excluir_livro/<_id>', methods=['GET', 'POST'])
