@@ -17,21 +17,17 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <table class="tabela-homepage"> 
-                        <tr>
-                            <td><h4>ENDEREÇO</h4></td>
-                            <td><p>{{sede.address}}</p></td>
-                        </tr>
-                        <tr>
-                            <td><h4>TELEFONE</h4></td>
-                            <td><p>{{sede.contact}}</p></td>
-                        </tr>
-                        <tr>
-                            <td><h4>HORÁRIO DE FUNCIONAMENTO</h4></td>
-                            <td><p>{{sede.schedule}}</p></td>
-                        </tr>
-                    </table>
-                                        <div class="sedes-recentes-mobile">
+                            <h4>ENDEREÇO</h4>
+                            <p>{{sede.address}}</p>
+                        
+                        
+                            <h4>TELEFONE</h4>
+                            <p>{{sede.contact}}</p>
+                        
+                        
+                            <h4>HORÁRIO DE FUNCIONAMENTO</h4>
+                            <p>{{sede.schedule}}</p>
+                    <div class="sedes-recentes-mobile">
                         <div class="sede-mobile" style="border-bottom: none;">
                             <p>{{sede.address}}</p>
                             <p>{{sede.contact}}</p>
@@ -42,7 +38,7 @@
                     <iframe
                     width="600"
                     height="450"
-                    frameborder="0" style="border:0"
+                    frameborder="0" style="border:0; width: 100%;"
                     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0jpvQiWthkM06WqSEX-_jepRA4OuChnU
                       &q={{sede.address.replace(' ', '+')}}" allowfullscreen>
                   </iframe>
