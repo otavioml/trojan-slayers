@@ -2,9 +2,13 @@ from flask import Blueprint, render_template, request, redirect, url_for
 from sistema import db
 from sistema.novidades.models import Novidade
 from datetime import datetime
+import locale
+try:
+    locale.setlocale(locale.LC_ALL, 'pt_BR')
+except:
+    locale.setlocale(locale.LC_ALL, 'Portuguese_Brazil')
 
 novidades = Blueprint('novidades', __name__, template_folder="templates")
-
 
 @novidades.route('/')
 def index():
@@ -22,7 +26,7 @@ def adicionar_novidade():
         novidade = Novidade(titulo, mensagem, nome)
         db.session.add(novidade)
         datenow = datetime.utcnow()
-        novidade.pub_date = datenow.strftime("%x")
+        novidade.pub_date = datenow.strftime('%x')
         # split_date = novidade.pub_date.split(" ", 1)
         # novidade.pub_date = split_date[0].replace('-', '/')
 
