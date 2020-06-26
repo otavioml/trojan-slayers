@@ -31,6 +31,14 @@
                             <td><p>{{sede.schedule}}</p></td>
                         </tr>
                     </table>
+                                        <div class="sedes-recentes-mobile">
+                        <div class="sede-mobile" style="border-bottom: none;">
+                            <p>{{sede.address}}</p>
+                            <p>{{sede.contact}}</p>
+                            <button type="button" class="btn btn-primary"><a href="{{url_for('sedes.editar_sede', _id=sede.id)}}">Editar</a></button></a>
+                            <button type="button" class="btn btn-primary"><a href="{{url_for('sedes.excluir_sede', _id=sede.id)}}">Excluir</a></button>
+                        </div>      
+                    </div>
                     <iframe
                     width="600"
                     height="450"
