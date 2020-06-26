@@ -82,7 +82,10 @@ def adicionar_livro():
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
             livro = Livro(titulo, genero, autor, price, date, available, filename)
-            livro.sedes = sedes_associadas
+            if request.form.get('linked') != 'on':
+                livro.sedes = []
+            else:
+                livro.sedes = sedes_associadas
             db.session.add(livro)
             db.session.commit()
             return redirect(url_for('livros.index'))
@@ -160,8 +163,10 @@ def editar_livro(_id):
             livro.price = price
             livro.available = available
             livro.cover = filename
-            livro.sedes = sedes_associadas
-
+            if request.form.get('linked') != 'on':
+                livro.sedes = []
+            else:
+                livro.sedes = sedes_associadas
             db.session.commit()
 
             return redirect(url_for('livros.livro_esp', _id=livro.id))
@@ -172,7 +177,10 @@ def editar_livro(_id):
             livro.pub_date = date
             livro.price = price
             livro.available = available
-            livro.sedes = sedes_associadas
+            if request.form.get('linked') != 'on':
+                livro.sedes = []
+            else:
+                livro.sedes = sedes_associadas
 
             db.session.commit()
             return redirect(url_for('livros.livro_esp', _id=livro.id))

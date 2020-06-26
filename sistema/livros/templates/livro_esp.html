@@ -34,7 +34,7 @@
                                     {% if sede != livro.sedes[-1] and sede == livro.sedes[-2] %}
                                     {{sede.name}} 
                                     {% endif %}
-                                    {% if sede == livro.sedes[-1] %}
+                                    {% if sede == livro.sedes[-1] and sede != livro.sedes[0] %}
                                     e {{sede.name}}.
                                     {% endif %}
                                     {% if sede == livro.sedes[-1] and sede == livro.sedes[0] %}
