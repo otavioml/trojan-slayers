@@ -8,7 +8,7 @@
             <!--Duas div, a primeira contendo a imagem do livro, a segunda informações-->
             <div class="row">
                 <div class="col-sm-6 capa-livro">
-                    <img src="{{url_for('static', filename='images/' + livro.cover)}}" alt="" height="400px" class="rounded img-in-div">
+                    <img src="{{url_for('static', filename='images/' + livro.cover)}}" alt="" height="400px" class="rounded img-in-div-livros">
                 </div>
                 <div class="livro-info col-sm-6">
                             <h2 class="montserrat mobile-center" style="margin-bottom: 20px;">{{livro.title}}</h2>
@@ -43,6 +43,8 @@
                                 {% endfor %}
                                 {% endif %}
                             </p>
+                            <h4>PREÇO</h4>
+                            <p>{{livro.price}}</p>
 
                     </table>
                     <!--Botões excluir e editar-->

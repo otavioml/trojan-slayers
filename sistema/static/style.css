@@ -203,10 +203,19 @@ form input, form textarea {
     margin-left: 5px;
 }
 
-.img-in-div {
+.img-in-div-livros {
     max-width: 100%;
     margin: auto;
     text-align: center;
+    margin-bottom: 25px;
+}
+
+.img-in-div {
+    max-width: 100%;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 .article-img {
