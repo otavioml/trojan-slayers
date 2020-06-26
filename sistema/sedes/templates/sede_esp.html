@@ -13,7 +13,7 @@
                             <a href="{{url_for('sedes.excluir_sede', _id=sede.id)}}"><i class="fas fa-trash-alt" style="font-size: 30px;"></i></a>
                         </div>
                     <div class="article-img">
-                        <img class="rounded img-in-div" src="{{url_for('static', filename='images/' + sede.picture)}}" alt="Foto da Sede">
+                        <img class="rounded img-in-div" width="100%" src="{{url_for('static', filename='images/' + sede.picture)}}" alt="Foto da Sede" style="margin-bottom: 20px;">
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -27,14 +27,6 @@
                         
                             <h4>HORÁRIO DE FUNCIONAMENTO</h4>
                             <p>{{sede.schedule}}</p>
-                    <div class="sedes-recentes-mobile">
-                        <div class="sede-mobile" style="border-bottom: none;">
-                            <p>{{sede.address}}</p>
-                            <p>{{sede.contact}}</p>
-                            <button type="button" class="btn btn-primary"><a href="{{url_for('sedes.editar_sede', _id=sede.id)}}">Editar</a></button></a>
-                            <button type="button" class="btn btn-primary"><a href="{{url_for('sedes.excluir_sede', _id=sede.id)}}">Excluir</a></button>
-                        </div>      
-                    </div>
                     <iframe
                     width="600"
                     height="450"
